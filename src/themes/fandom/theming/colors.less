@@ -38,6 +38,12 @@
 );
 @themed-page-background--windows: if(@is-very-light-theme, @white, @themed-page-background--secondary);
 
+@themed-page-background--formulas: if(
+	@is-very-light-theme,
+	@white,
+	if(@is-dark-theme, mix(@themed-page-background, @white, 70%), mix(@themed-page-background, @black, 95%))
+);
+
 // Text colors
 @themed-text-color: if(@is-dark-theme, @text-color--light, @text-color--dark);
 @themed-text-color--hover: if(@is-dark-theme, darken(@themed-text-color, 20%), lighten(@themed-text-color, 20%));
