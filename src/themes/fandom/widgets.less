@@ -364,8 +364,6 @@
 		// Remove user agent styles.
 		-webkit-appearance: none;
 		-moz-appearance: none;
-		// Support Firefox <= 34: Anything apart from `transparent` mixes up `option` sizes.
-		background-color: transparent;
 		background-position: right @padding-horizontal-base center;
 		// stylelint-disable declaration-block-no-duplicate-properties, media-feature-parentheses-space-inside
 		// Support IE 8-9: Move custom arrow out of canvas and remove padding the custom arrow.
@@ -375,14 +373,17 @@
 		border-style: @border-style-base;
 		border-width: @border-width-base;
 		box-sizing: border-box;
+		color: inherit;
 		font-family: inherit;
-		font-size: inherit;
+		font-size: @font-size-base;
+		mask: none;
+		-webkit-mask: none;
 		// Support Firefox <= 34: `height` needed in addition to adding, otherwise oversized.
 		height: @size-base;
 		// stylelint-disable-next-line declaration-block-no-shorthand-property-overrides
 		padding: ~'0\9';
 		// Support IE 10: Don't try to use vertical padding on select!
-		padding-left: @padding-horizontal-base;
+		padding-left: @input-horizontal-padding;
 		padding-right: @padding-end-dropdown;
 		vertical-align: middle;
 
