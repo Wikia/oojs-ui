@@ -21,9 +21,9 @@ let newVersion = '';
 // eg. 1.2.3-alpha.0
 // `patch` is always called with `parseInt` to handle `-alpha` identifier
 if (updateType === 'major') {
-  newVersion = `${Number(major) + 1}.${minor}.${parseInt(patch)}`;
+  newVersion = `${Number(major) + 1}.0.0}`;
 } else if (updateType === 'minor') {
-  newVersion = `${major}.${Number(minor) + 1}.${parseInt(patch)}`;
+  newVersion = `${major}.${Number(minor) + 1}.0`;
 } else if (updateType === 'patch') {
   newVersion = `${major}.${minor}.${parseInt(patch) + 1}`;
 } else {
