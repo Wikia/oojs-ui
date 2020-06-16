@@ -210,7 +210,7 @@ module.exports = function ( grunt ) {
 		}
 	};
 
-	grunt.initConfig( {
+	grunt.initConfig({
 		pkg: pkg,
 
 		// Build
@@ -222,70 +222,70 @@ module.exports = function ( grunt ) {
 			doc: 'docs/*',
 			tmp: 'dist/tmp',
 			wds: 'src/themes/fandom/wds-variables',
-            wdsVariables: 'src/themes/fandom/wds-variables/*.scss'
+			wdsVariables: 'src/themes/fandom/wds-variables/*.scss',
 		},
 		fileExists: {
-			src: requiredFiles.filter( function ( f ) {
-				return f.startsWith( 'src/' );
-			} )
+			src: requiredFiles.filter(function(f) {
+				return f.startsWith('src/');
+			}),
 		},
 		tyops: {
 			options: {
-				typos: 'build/typos.json'
+				typos: 'build/typos.json',
 			},
 			build: 'build/modules.yaml',
-			src: '{src,php}/**/*.{js,json,less,css}'
+			src: '{src,php}/**/*.{js,json,less,css}',
 		},
 		concat: {
 			options: {
-				banner: grunt.file.read( 'build/banner.txt' )
+				banner: grunt.file.read('build/banner.txt'),
 			},
 			js: {
 				options: {
 					sourceMap: true,
-					sourceMapName: function ( concatFileName ) {
+					sourceMapName: function(concatFileName) {
 						return concatFileName + '.map.json';
-					}
+					},
 				},
-				files: concatJsFiles
+				files: concatJsFiles,
 			},
 			css: {
-				files: concatCssFiles
+				files: concatCssFiles,
 			},
 			omnibus: {
 				options: {
-					banner: ''
+					banner: '',
 				},
-				files: concatOmnibus
+				files: concatOmnibus,
 			},
 			i18nMessages: {
 				options: {
 					banner: '',
-					process: true
+					process: true,
 				},
 				files: {
-					'dist/tmp/src/core-messages.js': 'src/core-messages.js.txt'
-				}
+					'dist/tmp/src/core-messages.js': 'src/core-messages.js.txt',
+				},
 			},
 			demoCss: {
 				options: {
-					banner: '/** This file is generated automatically. Do not modify it. */\n\n'
+					banner: '/** This file is generated automatically. Do not modify it. */\n\n',
 				},
 				files: {
-					'demos/styles/demo.rtl.css': 'demos/styles/demo.rtl.css'
-				}
+					'demos/styles/demo.rtl.css': 'demos/styles/demo.rtl.css',
+				},
 			},
 			theming: {
 				options: {
-					banner: ''
+					banner: '',
 				},
 				files: {
 					'dist/themes/fandom/theming/colors.scss': [
 						'src/themes/fandom/functions/fadeout.scss',
-						'dist/themes/fandom/theming/colors.scss'
-					]
-				}
-			}
+						'dist/themes/fandom/theming/colors.scss',
+					],
+				},
+			},
 		},
 
 		// Build – Code
@@ -294,281 +294,288 @@ module.exports = function ( grunt ) {
 				banner: minBanner,
 				sourceMap: true,
 				sourceMapIncludeSources: true,
-				report: 'gzip'
+				report: 'gzip',
 			},
 			js: {
 				expand: true,
 				src: 'dist/*.js',
 				ext: '.min.js',
-				extDot: 'last'
-			}
+				extDot: 'last',
+			},
 		},
 
 		// Build – Styling
 		less: lessTargets,
 		cssjanus: {
 			options: {
-				generateExactDuplicates: true
+				generateExactDuplicates: true,
 			},
 			dist: {
-				files: rtlFiles
+				files: rtlFiles,
 			},
 			demoCss: {
 				files: {
-					'demos/styles/demo.rtl.css': 'demos/styles/demo.css'
-				}
-			}
+					'demos/styles/demo.rtl.css': 'demos/styles/demo.css',
+				},
+			},
 		},
 		copy: {
 			imagesCommon: {
 				src: 'src/styles/images/*.cur',
 				dest: 'dist/images/',
 				expand: true,
-				flatten: true
+				flatten: true,
 			},
 			imagesThemes: {
 				src: 'src/themes/*/{*.json,images/**/*.{png,gif}}',
 				dest: 'dist/',
 				expand: true,
-				rename: strip( 'src/' )
+				rename: strip('src/'),
 			},
 			i18n: {
 				src: 'i18n/*.json',
 				expand: true,
-				dest: 'dist/'
+				dest: 'dist/',
 			},
 			jsduck: {
 				// Don't publish devDependencies
-				src: '{dist,node_modules/{' + Object.keys( pkg.dependencies ).join( ',' ) + '}}/**/*',
+				src: '{dist,node_modules/{' + Object.keys(pkg.dependencies).join(',') + '}}/**/*',
 				dest: 'docs/',
-				expand: true
+				expand: true,
 			},
 			demos: {
 				// Make sure you update this if dependencies are added
-				src: '{node_modules/{jquery,oojs}/dist/**/*,composer.json,dist/**/*,php/**/*,node_modules/{prismjs,javascript-stringify,design-system}/**/*}',
+				src:
+					'{node_modules/{jquery,oojs}/dist/**/*,composer.json,dist/**/*,php/**/*,node_modules/{prismjs,javascript-stringify,design-system}/**/*}',
 				dest: 'demos/',
-				expand: true
+				expand: true,
 			},
 			dist: {
-				src: [
-					'AUTHORS.txt',
-					'LICENSE-MIT',
-					'README.md',
-					'History.md'
-				],
-				dest: 'dist/'
+				src: ['AUTHORS.txt', 'LICENSE-MIT', 'README.md', 'History.md'],
+				dest: 'dist/',
 			},
 			wikimediauibasevars: {
 				flatten: true,
-				src: [
-					'node_modules/wikimedia-ui-base/wikimedia-ui-base.less'
-				],
-				dest: 'dist/wikimedia-ui-base.less'
+				src: ['node_modules/wikimedia-ui-base/wikimedia-ui-base.less'],
+				dest: 'dist/wikimedia-ui-base.less',
 			},
 			designsystemcss: {
 				flatten: true,
-				src: [
-					'node_modules/design-system/dist/css/styles.css'
-				],
-				dest: 'demos/styles/wds.css'
+				src: ['node_modules/design-system/dist/css/styles.css'],
+				dest: 'demos/styles/wds.css',
 			},
 			// Copies the necessary vendor/ files for demos without running "composer install"
 			fastcomposerdemos: {
 				src: 'vendor/**',
 				dest: 'demos/',
-				expand: true
+				expand: true,
 			},
-            wdsVariables: {
-                src: 'node_modules/design-system/dist/scss/wds-variables/*.scss',
-                dest: 'src/themes/fandom/wds-variables/',
-                flatten: true,
-                expand: true,
-            }
+			wdsVariables: {
+				src: 'node_modules/design-system/dist/scss/wds-variables/*.scss',
+				dest: 'src/themes/fandom/wds-variables/',
+				flatten: true,
+				expand: true,
+			},
 		},
 		colorizeSvg: colorizeSvgFiles,
 		svg2png: {
 			// This task gets dynamically disabled by 'set-graphics', if not needed
 			dist: {
-				src: 'dist/{images,themes}/**/*.svg'
-			}
+				src: 'dist/{images,themes}/**/*.svg',
+			},
 		},
 		'svg2png-off': {
 			dist: {
-				src: []
-			}
+				src: [],
+			},
 		},
 		// SVG Optimization
 		svgmin: {
 			options: {
 				js2svg: {
 					indent: '\t',
-					pretty: true
+					pretty: true,
 				},
 				multipass: true,
-				plugins: [ {
-					cleanupIDs: false
-				}, {
-					removeDesc: false
-				}, {
-					removeRasterImages: true
-				}, {
-					removeTitle: false
-				}, {
-					removeViewBox: false
-				}, {
-					removeXMLProcInst: false
-				}, {
-					sortAttrs: true
-				} ]
+				plugins: [
+					{
+						cleanupIDs: false,
+					},
+					{
+						removeDesc: false,
+					},
+					{
+						removeRasterImages: true,
+					},
+					{
+						removeTitle: false,
+					},
+					{
+						removeViewBox: false,
+					},
+					{
+						removeXMLProcInst: false,
+					},
+					{
+						sortAttrs: true,
+					},
+				],
 			},
 			srcSvgs: {
-				files: [ {
-					expand: true,
-					cwd: 'src',
-					src: [
-						'**/*.svg'
-					],
-					dest: 'src',
-					ext: '.svg'
-				} ]
+				files: [
+					{
+						expand: true,
+						cwd: 'src',
+						src: ['**/*.svg'],
+						dest: 'src',
+						ext: '.svg',
+					},
+				],
 			},
 			distSvgs: {
 				options: {
 					js2svg: {
-						pretty: false
-					}
+						pretty: false,
+					},
 				},
-				files: [ {
-					expand: true,
-					cwd: 'dist',
-					src: [
-						'**/*.svg'
-					],
-					dest: 'dist',
-					ext: '.svg'
-				} ]
-			}
+				files: [
+					{
+						expand: true,
+						cwd: 'dist',
+						src: ['**/*.svg'],
+						dest: 'dist',
+						ext: '.svg',
+					},
+				],
+			},
 		},
 		imagemin: {
 			distPngs: {
 				options: {
-					use: [ zopfli() ]
+					use: [zopfli()],
 				},
 				expand: true,
-				src: 'dist/**/*.png'
-			}
+				src: 'dist/**/*.png',
+			},
 		},
 		cssmin: {
 			options: {
 				keepSpecialComments: 0,
 				banner: minBanner,
 				compatibility: 'ie8',
-				report: 'gzip'
+				report: 'gzip',
 			},
 			dist: {
 				expand: true,
 				src: 'dist/*.css',
 				ext: '.min.css',
-				extDot: 'last'
-			}
+				extDot: 'last',
+			},
 		},
 
 		scss2less: {
 			convert: {
-				files: [{
-					src: 'src/themes/fandom/wds-variables/*.scss',
-					dest: './',
-					ext: '.less',
-					expand: true,
-					rename: function(dest, src) {
-						return dest + '/' + src.replace('_','');
-					}
-				}]
-			}
+				files: [
+					{
+						src: 'src/themes/fandom/wds-variables/*.scss',
+						dest: './',
+						ext: '.less',
+						expand: true,
+						rename: function(dest, src) {
+							return dest + '/' + src.replace('_', '');
+						},
+					},
+				],
+			},
 		},
 
 		lessToSass: {
 			theming: {
-				files: [{
-					expand: true,
-					cwd: 'src/themes/fandom/theming',
-					src: ['*.less'],
-					ext: '.scss',
-					dest: 'dist/themes/fandom/theming'
-				}],
+				files: [
+					{
+						expand: true,
+						cwd: 'src/themes/fandom/theming',
+						src: ['*.less'],
+						ext: '.scss',
+						dest: 'dist/themes/fandom/theming',
+					},
+				],
 				options: {
-					replacements: [{
-						pattern: /(\$[\w\-]*:\s*)boolean\((.*)\)/gi,
-						replacement: '$1$2',
-					}]
-				}
-			}
+					replacements: [
+						// removes boolean function usages, which are not needed in sass
+						{
+							pattern: /(\$[\w\-]*:\s*)boolean\((.*)\)/gi,
+							replacement: '$1$2',
+						},
+						// wraps css custom properties values with #{...} (sass interpolation)
+						{
+							pattern: /([^\w]--[\w-]+:\s)(.*);/gi,
+							replacement: '$1#{$2};',
+						},
+					],
+				},
+			},
 		},
 
 		// Lint – Code
 		eslint: {
 			options: {
 				reportUnusedDisableDirectives: true,
-				extensions: [ '.js', '.json' ],
-				cache: true
+				extensions: ['.js', '.json'],
+				cache: true,
 			},
 			dev: [
 				'**/*.{js,json}',
 				'!{coverage,dist,docs,node_modules,vendor,demos/{dist,node_modules,vendor}}/**',
-				'!tests/JSPHP.test.js'
+				'!tests/JSPHP.test.js',
 			],
 			html: {
 				options: {
 					// TODO: reportUnusedDisableDirectives doesn't work with plugin-html
 					// (https://github.com/BenoitZugmeyer/eslint-plugin-html/issues/111)
 					// Once that is fixed, merge dev and html
-					reportUnusedDisableDirectives: false
+					reportUnusedDisableDirectives: false,
 				},
 				src: [
 					'**/*.html',
 					'!{coverage,dist,docs,node_modules,vendor,demos/{dist,node_modules,vendor}}/**',
-					'!tests/JSPHP.test.js'
-				]
-			}
+					'!tests/JSPHP.test.js',
+				],
+			},
 		},
 
 		// Lint – Styling
 		stylelint: {
 			options: {
-				syntax: 'less'
+				syntax: 'less',
 			},
-			dev: [
-				'{demos,src}/**/*.{css,less}',
-				'!demos/dist/**',
-				'!demos/styles/demo.rtl.css',
-				'!demos/vendor/**'
-			]
+			dev: ['{demos,src}/**/*.{css,less}', '!demos/dist/**', '!demos/styles/demo.rtl.css', '!demos/vendor/**'],
 		},
 
 		// Lint – i18n
 		banana: {
-			all: 'i18n/'
+			all: 'i18n/',
 		},
 
 		// Test
 		exec: {
 			rubyTestSuiteGenerator: {
-				command: 'ruby bin/testsuitegenerator.rb src php -o tests/JSPHP-suite.json'
+				command: 'ruby bin/testsuitegenerator.rb src php -o tests/JSPHP-suite.json',
 			},
 			phpGenerateJSPHPForKarma: {
-				command: 'composer update --ansi --no-progress && php bin/generate-JSPHP-for-karma.php > tests/JSPHP.test.js'
+				command: 'composer update --ansi --no-progress && php bin/generate-JSPHP-for-karma.php > tests/JSPHP.test.js',
 			},
 			demos: {
 				command: 'composer update --ansi --no-progress --no-dev',
-				cwd: 'demos'
+				cwd: 'demos',
 			},
 			composer: {
-				command: 'composer update --ansi --no-progress --prefer-dist --profile -v && composer --ansi test'
-			}
+				command: 'composer update --ansi --no-progress --prefer-dist --profile -v && composer --ansi test',
+			},
 		},
 		karma: {
 			options: {
-				frameworks: [ 'qunit' ],
+				frameworks: ['qunit'],
 				files: [
 					'tests/QUnit.assert.equalDomElement.js',
 					'tests/JSPHP-generator.js',
@@ -588,33 +595,33 @@ module.exports = function ( grunt ) {
 					'tests/windows.test.js',
 					'tests/mixins/*.test.js',
 					'tests/widgets/*.test.js',
-					'tests/JSPHP.test.js'
+					'tests/JSPHP.test.js',
 				],
-				reporters: [ 'dots' ],
+				reporters: ['dots'],
 				singleRun: true,
 				browserDisconnectTimeout: 5 * 60 * 1000,
 				browserDisconnectTolerance: 2,
 				autoWatch: false,
-				browserNoActivityTimeout: 5 * 60 * 1000
+				browserNoActivityTimeout: 5 * 60 * 1000,
 			},
 			main: {
-				browsers: [ 'Chrome' ],
+				browsers: ['Chrome'],
 				preprocessors: {
-					'dist/*.js': [ 'coverage' ]
+					'dist/*.js': ['coverage'],
 				},
-				reporters: [ 'dots', 'coverage', 'karma-remap-istanbul' ],
+				reporters: ['dots', 'coverage', 'karma-remap-istanbul'],
 				coverageReporter: { type: 'in-memory' },
 				remapIstanbulReporter: {
 					reports: {
 						'text-summary': null,
 						clover: 'coverage/clover.xml',
-						html: 'coverage/'
-					}
-				}
+						html: 'coverage/',
+					},
+				},
 			},
 			other: {
-				browsers: [ 'Firefox' ]
-			}
+				browsers: ['Firefox'],
+			},
 		},
 
 		// Development
@@ -624,9 +631,9 @@ module.exports = function ( grunt ) {
 				'<%= stylelint.dev %>',
 				'src/**/*.less',
 				'php/**/*.php',
-				'.{stylelintrc,eslintrc.json}'
+				'.{stylelintrc,eslintrc.json}',
 			],
-			tasks: 'quick-build'
+			tasks: 'quick-build',
 		},
 
 		// Adding new theme
@@ -637,80 +644,89 @@ module.exports = function ( grunt ) {
 						expand: true,
 						src: 'src/themes/<%= grunt.option( "template" ).toLowerCase() %>/**/*.{less,json,svg,gif}',
 						dest: 'src/themes/<%= grunt.option( "name" ).toLowerCase() %>/',
-						rename: strip( 'src/themes/' + grunt.option( 'template' ).toLowerCase() + '/' )
+						rename: strip('src/themes/' + grunt.option('template').toLowerCase() + '/'),
 					},
 					{
 						src: 'src/themes/<%= grunt.option( "template" ).toLowerCase() %>/<%= grunt.option( "template" ) %>Theme.js',
-						dest: 'src/themes/<%= grunt.option( "name" ).toLowerCase() %>/<%= grunt.option( "name" ) %>Theme.js'
+						dest: 'src/themes/<%= grunt.option( "name" ).toLowerCase() %>/<%= grunt.option( "name" ) %>Theme.js',
 					},
 					{
 						src: 'php/themes/<%= grunt.option( "template" ) %>Theme.php',
-						dest: 'php/themes/<%= grunt.option( "name" ) %>Theme.php'
-					}
+						dest: 'php/themes/<%= grunt.option( "name" ) %>Theme.php',
+					},
 				],
 				options: {
 					replacements: [
 						{
-							pattern: new RegExp( '\\b' + grunt.option( 'template' ) + '\\b', 'g' ),
-							replacement: grunt.option( 'name' )
+							pattern: new RegExp('\\b' + grunt.option('template') + '\\b', 'g'),
+							replacement: grunt.option('name'),
 						},
 						{
-							pattern: new RegExp( '\\b' + grunt.option( 'template' ) + 'Theme\\b', 'g' ),
-							replacement: grunt.option( 'name' ) + 'Theme'
+							pattern: new RegExp('\\b' + grunt.option('template') + 'Theme\\b', 'g'),
+							replacement: grunt.option('name') + 'Theme',
 						},
 						{
-							pattern: new RegExp( '\\b' + grunt.option( 'template' ).toLowerCase() + '\\b', 'g' ),
-							replacement: grunt.option( 'name' ).toLowerCase()
-						}
-					]
-				}
+							pattern: new RegExp('\\b' + grunt.option('template').toLowerCase() + '\\b', 'g'),
+							replacement: grunt.option('name').toLowerCase(),
+						},
+					],
+				},
 			},
 			updateGruntfile: {
 				files: {
-					'Gruntfile.js': 'Gruntfile.js'
+					'Gruntfile.js': 'Gruntfile.js',
 				},
 				options: {
-					replacements: [ {
-						pattern: /\t\t\twikimediaui: 'WikimediaUI',/,
-						replacement: '\t\t\t<%= grunt.option( "name" ).toLowerCase() %>: \'<%= grunt.option( "name" ) %>\',\n$&'
-					} ]
-				}
+					replacements: [
+						{
+							pattern: /\t\t\twikimediaui: 'WikimediaUI',/,
+							replacement: '\t\t\t<%= grunt.option( "name" ).toLowerCase() %>: \'<%= grunt.option( "name" ) %>\',\n$&',
+						},
+					],
+				},
 			},
 			updateDemoIndex: {
 				files: {
-					'demos/index.html': 'demos/index.html'
+					'demos/index.html': 'demos/index.html',
 				},
 				options: {
-					replacements: [ {
-						pattern: /(\t*)<script src="dist\/oojs-ui-wikimediaui.js"><\/script>/,
-						replacement: '$1<script src="dist/oojs-ui-<%= grunt.option( "name" ).toLowerCase() %>.js"></script>\n$&'
-					} ]
-				}
+					replacements: [
+						{
+							pattern: /(\t*)<script src="dist\/oojs-ui-wikimediaui.js"><\/script>/,
+							replacement: '$1<script src="dist/oojs-ui-<%= grunt.option( "name" ).toLowerCase() %>.js"></script>\n$&',
+						},
+					],
+				},
 			},
 			updateDemoJs: {
 				files: {
-					'demos/demo.js': 'demos/demo.js'
+					'demos/demo.js': 'demos/demo.js',
 				},
 				options: {
-					replacements: [ {
-						pattern: /(\t*)wikimediaui: 'WikimediaUI',/,
-						replacement: '$1<%= grunt.option( "name" ).toLowerCase() %>: \'<%= grunt.option( "name" ) %>\',\n$&'
-					} ]
-				}
+					replacements: [
+						{
+							pattern: /(\t*)wikimediaui: 'WikimediaUI',/,
+							replacement: '$1<%= grunt.option( "name" ).toLowerCase() %>: \'<%= grunt.option( "name" ) %>\',\n$&',
+						},
+					],
+				},
 			},
 			updateDemoPhp: {
 				files: {
-					'demos/demos.php': 'demos/demos.php'
+					'demos/demos.php': 'demos/demos.php',
 				},
 				options: {
-					replacements: [ {
-						pattern: /(\t*)'wikimediaui' => 'WikimediaUI',/,
-						replacement: '$1\'<%= grunt.option( "name" ).toLowerCase() %>\' => \'<%= grunt.option( "name" ) %>\',\n$&'
-					} ]
-				}
-			}
-		}
-	} );
+					replacements: [
+						{
+							pattern: /(\t*)'wikimediaui' => 'WikimediaUI',/,
+							replacement:
+								'$1\'<%= grunt.option( "name" ).toLowerCase() %>\' => \'<%= grunt.option( "name" ) %>\',\n$&',
+						},
+					],
+				},
+			},
+		},
+	});
 
 	grunt.registerTask( 'set-graphics', function ( graphics ) {
 		graphics = graphics || grunt.option( 'graphics' ) || 'mixed';
