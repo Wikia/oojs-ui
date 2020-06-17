@@ -16,7 +16,7 @@ $( function () {
 	var $globalNavigation = $( '.wds-global-navigation-wrapper' );
 
 	OO.ui.getViewportSpacing = function () {
-		var viewportTopOffset = $globalNavigation.height();
+		var viewportTopOffset = $globalNavigation.height() || 0;
 
 		return {
 			top: viewportTopOffset,
