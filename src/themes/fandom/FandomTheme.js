@@ -14,13 +14,15 @@ OO.ui.theme = new OO.ui.FandomTheme();
 
 $( function () {
 	var $globalNavigation = $( '.wds-global-navigation-wrapper' );
+	var wikiaBarWrapper = $( '#WikiaBarWrapper' );
 
 	OO.ui.getViewportSpacing = function () {
 		var viewportTopOffset = $globalNavigation.height() || 0;
+		var viewportBottomOffset = !wikiaBarWrapper.hasClass( 'hidden' ) ? wikiaBarWrapper.height() || 0 : 0;
 
 		return {
 			top: viewportTopOffset,
-			bottom: 0,
+			bottom: viewportBottomOffset,
 			left: 0,
 			right: 0
 		};
