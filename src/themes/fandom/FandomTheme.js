@@ -15,10 +15,13 @@ OO.ui.theme = new OO.ui.FandomTheme();
 $( function () {
 	var $globalNavigation = $( '.wds-global-navigation-wrapper' );
 	var wikiaBarWrapper = $( '#WikiaBarWrapper' );
+	var $summaryPanel = $( '.ve-ui-summaryPanel' );
 
 	OO.ui.getViewportSpacing = function () {
 		var viewportTopOffset = $globalNavigation.height() || 0;
 		var viewportBottomOffset = !wikiaBarWrapper.hasClass( 'hidden' ) ? wikiaBarWrapper.height() || 0 : 0;
+
+		viewportBottomOffset += $summaryPanel.length ? $summaryPanel.height() : 0;
 
 		return {
 			top: viewportTopOffset,
