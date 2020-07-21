@@ -794,7 +794,7 @@ module.exports = function ( grunt ) {
 		'copy:dist',
 		// 'copy:wikimediauibasevars',
 		'fandom-theming',
-		'clean:tmp', 'demos'
+		'clean:tmp'
 	] );
 
     grunt.registerTask( 'fandom-import-wds', [
