@@ -13,8 +13,8 @@
 @themed-success-color: @wds-color-success;
 @themed-notice-color: @wds-color-message;
 
-@themed-button-label: if(luma(@color-buttons) < 50%, @white, @wds-fandom-color-black);
-@themed-link-label: if(luma(@color-links) < 50%, @white, @wds-fandom-color-black);
+@themed-button-label: if(luma(@color-buttons) < @light-luma-threshold, @white, @wds-fandom-color-black);
+@themed-link-label: if(luma(@color-links) < @light-luma-threshold, @white, @wds-fandom-color-black);
 
 @color-page-luma: luma(@color-page);
 @color-buttons-luma: luma(@color-buttons);

@@ -4,6 +4,9 @@
 //   @themed-alert-color, @themed-warning-color, @themed-success-color, @themed-notice-color
 //   @color-page-luma, @color-buttons-luma, @color-links-luma, @color-alert-luma
 
+@light-luma-threshold: 1/4.3 * 100%;
+@very-light-luma-threshold: 90%;
+
 // Base colors
 @themed-page-background: @color-page;
 @themed-button-background: @color-buttons;
@@ -12,16 +15,16 @@
 // Special colors variations
 @themed-alert-color--fadeout: fadeout(@themed-alert-color, 85%);
 @themed-alert-color--hover: if(
-	@color-alert-luma < 50%,
+	@color-alert-luma < @light-luma-threshold,
 	lighten(@themed-alert-color, 20%),
 	darken(@themed-alert-color, 20%)
 );
 
 // Boolean variables
-@is-dark-theme: boolean(@color-page-luma < 50%);
-@is-very-light-theme: boolean(@color-page-luma > 90%);
-@is-dark-button: boolean(@color-buttons-luma < 50%);
-@is-dark-link: boolean(@color-links-luma < 50%);
+@is-dark-theme: boolean(@color-page-luma < @light-luma-threshold);
+@is-very-light-theme: boolean(@color-page-luma > @very-light-luma-threshold);
+@is-dark-button: boolean(@color-buttons-luma < @light-luma-threshold);
+@is-dark-link: boolean(@color-links-luma < @light-luma-threshold);
 
 @white: #fff;
 @black: #000;
