@@ -4,6 +4,23 @@
 //   @themed-alert-color, @themed-warning-color, @themed-success-color, @themed-notice-color
 //   @color-page-luma, @color-buttons-luma, @color-links-luma, @color-alert-luma
 
+// These thresholds are calculated for specific light and dark text colors and should be recalculated
+// if the colors change. At these thresholds we recognize background color as dark or light.
+// see: https://github.com/Wikia/unified-platform/blob/728d64c6e6a66485da4e1fa0ae0a4e6bdfe85cf1/extensions/fandom/FandomIncludes/src/Util/SassUtil.php#L557
+// see: https://wikia-inc.atlassian.net/wiki/spaces/XW/pages/1175420933/Theming+colors+in+UCP
+
+// Standard luma threshold - for white (#ffffff) and dark (#000000) foreground color
+@luma-threshold--standard: 17.91%;
+
+// Luma threshold for color-page (as background color) and for text-color--light (#e6e6e6) and text-color--dark (#3a3a3a)
+@luma-threshold--page: 22.86%;
+
+// Luma threshold for very light background colors
+@luma-threshold--page--very-light: 90%;
+
+// Luma threshold for color-buttons (as background color) and for button-label--light (#ffffff) and button-label--dark (#0e191a)
+@luma-threshold--buttons: 19.8%;
+
 // Base colors
 @themed-page-background: @color-page;
 @themed-button-background: @color-buttons;
@@ -12,16 +29,16 @@
 // Special colors variations
 @themed-alert-color--fadeout: fadeout(@themed-alert-color, 85%);
 @themed-alert-color--hover: if(
-	@color-alert-luma < 50%,
+	@color-alert-luma < @luma-threshold--standard,
 	lighten(@themed-alert-color, 20%),
 	darken(@themed-alert-color, 20%)
 );
 
 // Boolean variables
-@is-dark-theme: boolean(@color-page-luma < 50%);
-@is-very-light-theme: boolean(@color-page-luma > 90%);
-@is-dark-button: boolean(@color-buttons-luma < 50%);
-@is-dark-link: boolean(@color-links-luma < 50%);
+@is-dark-theme: boolean(@color-page-luma < @luma-threshold--page);
+@is-very-light-theme: boolean(@color-page-luma > @luma-threshold--page--very-light);
+@is-dark-button: boolean(@color-buttons-luma < @luma-threshold--buttons);
+@is-dark-link: boolean(@color-links-luma < @luma-threshold--standard);
 
 @white: #fff;
 @black: #000;

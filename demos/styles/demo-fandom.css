@@ -20,7 +20,7 @@
 .oo-ui-buttonElement-frameless.oo-ui-flaggedElement-destructive.oo-ui-widget-enabled > .oo-ui-buttonElement-button:hover,
 .oo-ui-buttonElement-frameless.oo-ui-flaggedElement-destructive.oo-ui-widget-enabled > .oo-ui-buttonElement-button:active,
 .oo-ui-buttonElement-frameless.oo-ui-flaggedElement-destructive.oo-ui-widget-enabled > .oo-ui-buttonElement-button:focus {
-  color: #f1778d;
+  color: #8e0e25;
 }
 .oo-ui-buttonElement-framed:not(.oo-ui-flaggedElement-primary):not(.oo-ui-buttonElement-active) > .oo-ui-buttonElement-button {
   color: #3a3a3a;
@@ -52,7 +52,7 @@
 .oo-ui-buttonElement-framed:not(.oo-ui-flaggedElement-primary):not(.oo-ui-buttonElement-active).oo-ui-widget-enabled.oo-ui-flaggedElement-destructive.oo-ui-widget-enabled > .oo-ui-buttonElement-button:active,
 .oo-ui-buttonElement-framed:not(.oo-ui-flaggedElement-primary):not(.oo-ui-buttonElement-active).oo-ui-flaggedElement-destructive.oo-ui-widget-enabled > .oo-ui-buttonElement-button:focus,
 .oo-ui-buttonElement-framed:not(.oo-ui-flaggedElement-primary):not(.oo-ui-buttonElement-active).oo-ui-widget-enabled.oo-ui-flaggedElement-destructive.oo-ui-widget-enabled > .oo-ui-buttonElement-button:focus {
-  color: #f1778d;
+  color: #8e0e25;
 }
 .oo-ui-buttonElement-framed.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button,
 .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button {
@@ -204,7 +204,7 @@
 .oo-ui-tool.oo-ui-widget-enabled.oo-ui-flaggedElement-progressive .oo-ui-tool-link:hover,
 .oo-ui-tool.oo-ui-widget-enabled.oo-ui-flaggedElement-progressive .oo-ui-tool-link:active,
 .oo-ui-tool.oo-ui-widget-enabled.oo-ui-flaggedElement-progressive .oo-ui-tool-link:focus {
-  color: #ffd6d3;
+  color: #ff1807;
 }
 .oo-ui-tool.oo-ui-widget-enabled.oo-ui-flaggedElement-destructive .oo-ui-tool-link {
   color: #e81a3f;
@@ -212,7 +212,7 @@
 .oo-ui-tool.oo-ui-widget-enabled.oo-ui-flaggedElement-destructive .oo-ui-tool-link:hover,
 .oo-ui-tool.oo-ui-widget-enabled.oo-ui-flaggedElement-destructive .oo-ui-tool-link:active,
 .oo-ui-tool.oo-ui-widget-enabled.oo-ui-flaggedElement-destructive .oo-ui-tool-link:focus {
-  color: #f1778d;
+  color: #8e0e25;
 }
 .oo-ui-tool.oo-ui-widget-enabled.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-progressive .oo-ui-tool-link {
   background-color: #088488;
@@ -486,7 +486,7 @@
 }
 .oo-ui-tagItemWidget.oo-ui-widget-enabled.oo-ui-flaggedElement-invalid:hover,
 .oo-ui-tagItemWidget.oo-ui-widget-enabled.oo-ui-flaggedElement-invalid:focus {
-  color: #f1778d;
+  color: #8e0e25;
 }
 .oo-ui-tagMultiselectWidget-handle {
   border-color: #b6b8b8;
@@ -728,7 +728,7 @@ body.oo-ui-theme-fandom .demo-theming .special-colors-variations .themed-alert-c
   background-color: rgba(232, 26, 63, 0.15);
 }
 body.oo-ui-theme-fandom .demo-theming .special-colors-variations .themed-alert-color--hover::before {
-  background-color: #f1778d;
+  background-color: #8e0e25;
 }
 body.oo-ui-theme-fandom .demo-theming .boolean-variables .color-box {
   grid-template-columns: 1fr;
@@ -764,7 +764,7 @@ body.oo-ui-theme-fandom .demo-theming .link-colors .themed-link-color::before {
   background-color: #ff776d;
 }
 body.oo-ui-theme-fandom .demo-theming .link-colors .themed-link-color--hover::before {
-  background-color: #ffd6d3;
+  background-color: #ff1807;
 }
 body.oo-ui-theme-fandom .demo-theming .link-colors .themed-link-color--fadeout::before {
   background-color: rgba(255, 119, 109, 0.15);
