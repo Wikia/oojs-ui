@@ -31,7 +31,7 @@
 			}
 		},
 		"articleSearch": {
-			"file": "../wikimediaui/images/icons/articleSearch.svg"
+			"file": "~design-system-svg/wds-icons-magnifying-glass-small.svg"
 		},
 		"articleRedirect": {
 			"file": {
