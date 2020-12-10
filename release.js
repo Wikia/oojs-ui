@@ -32,12 +32,6 @@ if (updateType === 'major') {
 
 newVersion = `${newVersion}---base-${pkg.upstreamVersion}`;
 
-console.log('New version:', newVersion);
-
-// update package.json with `proper` field
-fs.writeFileSync('./package.json', JSON.stringify({ ...pkg, version: newVersion }, null, 2));
-fs.writeFileSync('./package-lock.json', JSON.stringify({ ...lock, version: newVersion }, null, 2));
-
 const onMaster = 'git checkout master && git pull';
 const tag = `git tag -a ${newVersion} -m ${newVersion}`;
 const commit = `git add . && git commit -m "Release: ${newVersion}"`;
@@ -46,8 +40,18 @@ const push = 'git push origin HEAD --follow-tags';
 // this also builds app in prepublishOnly script
 const publish = 'npm publish';
 
+if (isProdUpdate) {
+  execSync(onMaster, { stdio: [0, 1, 2] });
+}
+
+console.log('New version:', newVersion);
+
+// update package.json with `proper` field
+fs.writeFileSync('./package.json', JSON.stringify({ ...pkg, version: newVersion }, null, 2));
+fs.writeFileSync('./package-lock.json', JSON.stringify({ ...lock, version: newVersion }, null, 2));
+
 // skip tagging and commits for dev
-const commands = isProdUpdate ? [onMaster, tag, commit, push, publish] : [publish];
+const commands = isProdUpdate ? [tag, commit, push, publish] : [publish];
 
 // run all commands with instant output to terminal
 execSync(commands.join(' && '), { stdio: [0, 1, 2] });
