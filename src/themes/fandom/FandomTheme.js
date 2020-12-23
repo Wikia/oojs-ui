@@ -13,6 +13,12 @@ OO.inheritClass( OO.ui.FandomTheme, OO.ui.Theme );
 OO.ui.theme = new OO.ui.FandomTheme();
 
 $( function () {
+	OO.ui.isMobile = function () {
+		var $body = $( 'body' );
+		console.log('#####', $body.attr('class'));
+		return ( $body.hasClass( 'skin-mobileve' ) || $body.hasClass( 'skin-fandommobile' ) );
+	};
+
 	OO.ui.getViewportSpacing = function () {
 		var $globalNavigation = $( '.wds-global-navigation-wrapper' );
 		var $wikiaBarWrapper = $( '#WikiaBarWrapper' );
