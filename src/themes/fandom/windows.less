@@ -199,8 +199,13 @@
 
 		&-safe,
 		&-other {
-			display: flex;
 			align-items: center;
+			display: flex;
+
+			.oo-ui-actionWidget {
+				display: inline-flex;
+				height: 100%;
+			}
 
 			.oo-ui-actionWidget > .oo-ui-buttonElement-button {
 				border-left-color: transparent;

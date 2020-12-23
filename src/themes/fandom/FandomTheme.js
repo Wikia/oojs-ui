@@ -15,7 +15,7 @@ OO.ui.theme = new OO.ui.FandomTheme();
 $( function () {
 	OO.ui.isMobile = function () {
 		var $body = $( 'body' );
-		console.log('#####', $body.attr('class'));
+
 		return ( $body.hasClass( 'skin-mobileve' ) || $body.hasClass( 'skin-fandommobile' ) );
 	};
 
