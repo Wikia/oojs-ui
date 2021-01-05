@@ -1,6 +1,6 @@
 {
   "name": "@fandom/oojs-ui",
-  "version": "0.12.0---base-0.35.1",
+  "version": "0.12.0-dialogs.7---base-0.35.1",
   "upstreamVersion": "0.35.1",
   "description": "User interface classes built on the OOjs framework.",
   "keywords": [
@@ -34,7 +34,7 @@
     "release": "node ./release.js"
   },
   "dependencies": {
-    "design-system": "git://github.com/Wikia/design-system.git#22.8.0",
+    "design-system": "git://github.com/Wikia/design-system.git#23.19.1",
     "jquery": "3.4.1",
     "oojs": "3.0.0",
     "wikimedia-ui-base": "0.14.0"
