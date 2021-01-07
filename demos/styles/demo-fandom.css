@@ -264,6 +264,7 @@
 }
 .oo-ui-popupToolGroup-tools {
   background-color: #fff;
+  border-color: #b6b8b8;
   box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.3);
 }
 .oo-ui-popupToolGroup.oo-ui-widget-enabled > .oo-ui-popupToolGroup-handle:hover,
