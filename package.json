@@ -34,7 +34,7 @@
     "release": "node ./release.js"
   },
   "dependencies": {
-    "design-system": "git://github.com/Wikia/design-system.git#23.19.1",
+    "@fandom/design-system": "23.27.1-test.1",
     "jquery": "3.4.1",
     "oojs": "3.0.0",
     "wikimedia-ui-base": "0.14.0"

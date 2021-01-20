@@ -346,7 +346,7 @@ module.exports = function ( grunt ) {
 			demos: {
 				// Make sure you update this if dependencies are added
 				src:
-					'{node_modules/{jquery,oojs}/dist/**/*,composer.json,dist/**/*,php/**/*,node_modules/{prismjs,javascript-stringify,design-system}/**/*}',
+					'{node_modules/{jquery,oojs}/dist/**/*,composer.json,dist/**/*,php/**/*,node_modules/{prismjs,javascript-stringify,@fandom/design-system}/**/*}',
 				dest: 'demos/',
 				expand: true,
 			},
@@ -361,7 +361,7 @@ module.exports = function ( grunt ) {
 			},
 			designsystemcss: {
 				flatten: true,
-				src: ['node_modules/design-system/dist/css/styles.css'],
+				src: ['node_modules/@fandom/design-system/dist/css/styles.css'],
 				dest: 'demos/styles/wds.css',
 			},
 			// Copies the necessary vendor/ files for demos without running "composer install"
@@ -371,7 +371,7 @@ module.exports = function ( grunt ) {
 				expand: true,
 			},
 			wdsVariables: {
-				src: 'node_modules/design-system/dist/scss/wds-variables/*.scss',
+				src: 'node_modules/@fandom/design-system/dist/scss/wds-variables/*.scss',
 				dest: 'src/themes/fandom/wds-variables/',
 				flatten: true,
 				expand: true,
