@@ -12,18 +12,7 @@ ghPages.publish(
 	{
 		add: true,
 		dotfiles: false,
-		message: 'OOUI demo pages update: ' + pkg.version,
-		// for testing purposes
-		// push: false,
-		async beforeAdd(git) {
-			return git.rm([
-				'./php',
-				'./vendor',
-				'./*.php',
-				'./composer.json',
-				'./composer.lock',
-				'./infusion.js'
-			]);
-		}
+		history: false,
+		message: 'OOUI demo pages update: ' + pkg.version
 	}
 );
