@@ -147,3 +147,12 @@ Release
     # NOTE: Git tags are not created during dev releases, use "version" field or check artifactory.
 
 </pre>
+
+Demo publishing
+---------------
+To publish Fandom OOUI demo on [github pages](https://wikia.github.io/oojs-ui/) just run `publish-demo`:
+<pre lang="bash">
+    $ npm run publish-demo
+</pre>
+
+Demo is published automatically with each production release, so there should be no need to run it manually. 
