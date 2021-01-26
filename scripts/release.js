@@ -39,6 +39,7 @@ const commit = `git add . && git commit -m "Release: ${newVersion}"`;
 const push = 'git push origin HEAD --follow-tags';
 // this also builds app in prepublishOnly script
 const publish = 'npm publish';
+const publishDemo = 'npm run publish-demo';
 
 if (isProdUpdate) {
   execSync(onMaster, { stdio: [0, 1, 2] });
@@ -51,7 +52,7 @@ fs.writeFileSync('./package.json', JSON.stringify({ ...pkg, version: newVersion 
 fs.writeFileSync('./package-lock.json', JSON.stringify({ ...lock, version: newVersion }, null, 2));
 
 // skip tagging and commits for dev
-const commands = isProdUpdate ? [tag, commit, push, publish] : [publish];
+const commands = isProdUpdate ? [tag, commit, push, publish, publishDemo] : [publish];
 
 // run all commands with instant output to terminal
 execSync(commands.join(' && '), { stdio: [0, 1, 2] });
