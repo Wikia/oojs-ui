@@ -5,6 +5,8 @@ This is a fork of MediaWiki oojs-ui library with Fandom theme used in Fandom's u
 If you want to publish new version just update version in package.json and than run `npm publish`.
 You need to be logged in to our internal npm registry (artifactory). To login use `npm login`.
 
+[Fandom OOUI demo](https://wikia.github.io/oojs-ui/)
+
 OOUI
 =================
 
@@ -147,3 +149,12 @@ Release
     # NOTE: Git tags are not created during dev releases, use "version" field or check artifactory.
 
 </pre>
+
+Demo publishing
+---------------
+To publish Fandom OOUI demo on [github pages](https://wikia.github.io/oojs-ui/) just run `publish-demo`:
+<pre lang="bash">
+    $ npm run publish-demo
+</pre>
+
+Demo is published automatically with each production release, so there should be no need to run it manually. 
