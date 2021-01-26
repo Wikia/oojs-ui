@@ -12,7 +12,14 @@ ghpages.publish(
 		// for testing purposes
 		push: false,
 		async beforeAdd(git) {
-			return git.rm('./php ./vendor ./composer.json ./composer.lock ./infusion.js ./*.php');
+			return git.rm([
+				'./php',
+				'./vendor',
+				'./*.php',
+				'./composer.json',
+				'./composer.lock',
+				'./infusion.js'
+			]);
 		}
 	}
 );
