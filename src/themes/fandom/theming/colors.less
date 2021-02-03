@@ -24,8 +24,8 @@
 
 // Base colors
 @themed-page-background: @color-page;
-@themed-button-background: @color-buttons;
-@themed-link-color: @color-links;
+@themed-button-background-tmp: @color-buttons;
+@themed-link-color-tmp: @color-links;
 
 // Special colors variations
 @themed-alert-color--fadeout: fadeout(@themed-alert-color, 85%);
@@ -54,21 +54,21 @@
 @themed-page-background--windows: if(@is-very-light-theme, @white, @themed-page-background--secondary);
 
 // Text colors
-@themed-text-color: if(@is-dark-theme, @text-color--light, @text-color--dark);
-@themed-text-color--hover: if(@is-dark-theme, darken(@themed-text-color, 20%), lighten(@themed-text-color, 20%));
-@themed-text-color--secondary: fadeout(@themed-text-color, 40%);
+@themed-text-color-tmp: if(@is-dark-theme, @text-color--light, @text-color--dark);
+@themed-text-color--hover-tmp: if(@is-dark-theme, darken(@themed-text-color-tmp, 20%), lighten(@themed-text-color-tmp, 20%));
+@themed-text-color--secondary: fadeout(@themed-text-color-tmp, 40%);
 
 // Link colors
-@themed-link-color--hover: if(@is-dark-link, lighten(@themed-link-color, 20%), darken(@themed-link-color, 20%));
-@themed-link-color--fadeout: fadeout(@themed-link-color, 85%);
+@themed-link-color--hover: if(@is-dark-link, lighten(@themed-link-color-tmp, 20%), darken(@themed-link-color-tmp, 20%));
+@themed-link-color--fadeout: fadeout(@themed-link-color-tmp, 85%);
 
 /* prettier-ignore */
-@themed-link-color--active: if(lightness(@themed-link-color) < 50%, lighten(@themed-link-color--fadeout, 20%), darken(@themed-link-color--fadeout, 20%));
+@themed-link-color--active: if(lightness(@themed-link-color-tmp) < 50%, lighten(@themed-link-color--fadeout, 20%), darken(@themed-link-color--fadeout, 20%));
 
 // Button colors
 
 /* prettier-ignore */
-@themed-button-background--hover: if(@is-dark-button, lighten(@themed-button-background, 20%), darken(@themed-button-background, 20%));
+@themed-button-background--hover-tmp: if(@is-dark-button, lighten(@themed-button-background-tmp, 20%), darken(@themed-button-background-tmp, 20%));
 
 // Border colors
 
@@ -82,3 +82,13 @@
 // Toolbar colors
 @toolbar-text-color: if(@is-dark-theme, @white, @wds-fandom-color-black);
 @toolbar-separator-color: mix(@themed-page-background, if(@is-dark-theme, @white, @black), 50%);
+
+@themed-button-background: var(--fds-button-background-color, @themed-button-background-tmp);
+@themed-button-background--hover: var(--fds-button-background-color--active, @themed-button-background--hover-tmp);
+//@themed-button-label: var(--fds-button-label-color, @themed-button-label-tmp);
+
+@themed-text-color: var(--fds-text-color, @themed-text-color-tmp);
+@themed-text-color--hover: var(--fds-text-color--active, @themed-text-color--hover-tmp);
+
+@themed-link-color: var(--fds-link-color, @themed-link-color-tmp);
+//@themed-link-label: var(--fds-link-label, @themed-link-label);
