@@ -436,18 +436,18 @@
 }
 .oo-ui-tabSelectWidget-framed {
   background-color: transparent;
-  border-bottom-color: #ff776d;
+  border-bottom-color: var(--fds-link-color, #ff776d);
 }
 .oo-ui-tabSelectWidget-framed .oo-ui-tabOptionWidget {
   background-color: #e6e9e9;
   color: #3a3a3a;
 }
 .oo-ui-tabSelectWidget-framed .oo-ui-tabOptionWidget.oo-ui-optionWidget-selected {
-  background-color: #ff776d;
-  color: #fff;
+  background-color: var(--fds-link-color, #ff776d);
+  color: var(--fds-link-label-color, #fff);
 }
 .oo-ui-tabSelectWidget-framed .oo-ui-tabOptionWidget.oo-ui-widget-enabled:not(.oo-ui-optionWidget-selected):hover {
-  color: #ff776d;
+  color: var(--fds-link-color, #ff776d);
 }
 .oo-ui-tabSelectWidget-frameless .oo-ui-tabOptionWidget,
 .oo-ui-tabSelectWidget:not(.oo-ui-tabSelectWidget-framed) .oo-ui-tabOptionWidget {
@@ -457,12 +457,12 @@
 .oo-ui-tabSelectWidget:not(.oo-ui-tabSelectWidget-framed) .oo-ui-tabOptionWidget.oo-ui-optionWidget-selected,
 .oo-ui-tabSelectWidget-frameless .oo-ui-tabOptionWidget.oo-ui-widget-enabled:active,
 .oo-ui-tabSelectWidget:not(.oo-ui-tabSelectWidget-framed) .oo-ui-tabOptionWidget.oo-ui-widget-enabled:active {
-  box-shadow: inset 0 -2px 0 0 #ff776d;
-  color: #ff776d;
+  box-shadow: inset 0 -2px 0 0 var(--fds-link-color, #ff776d);
+  color: var(--fds-link-color, #ff776d);
 }
 .oo-ui-tabSelectWidget-frameless .oo-ui-tabOptionWidget.oo-ui-widget-enabled:hover,
 .oo-ui-tabSelectWidget:not(.oo-ui-tabSelectWidget-framed) .oo-ui-tabOptionWidget.oo-ui-widget-enabled:hover {
-  color: #ff776d;
+  color: var(--fds-link-color, #ff776d);
 }
 .oo-ui-tagItemWidget {
   color: #3a3a3a;
