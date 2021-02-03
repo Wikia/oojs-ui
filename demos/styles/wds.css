@@ -1921,6 +1921,164 @@ button.wds-button, a.wds-button {
   opacity: 0.5;
 }
 
+.fds-button {
+  --fds-primary-button--background: var(--fds-button-background-color);
+  --fds-primary-button--background--active: var(--fds-button-background-color--active);
+  --fds-primary-button--label: var(--fds-button-label-color);
+  --fds-secondary-button--label: var(--fds-text-color);
+  --fds-secondary-button--label--active: var(--fds-text-color--active);
+  --fds-text-button--label: var(--fds-text-color);
+  --fds-text-button--label--active: var(--fds-text-color--active);
+  align-items: center;
+  -webkit-appearance: none;
+  background-color: var(--fds-primary-button--background);
+  border: 1px solid var(--fds-primary-button--background);
+  border-radius: 3px;
+  box-sizing: content-box;
+  color: var(--fds-primary-button--label);
+  cursor: default;
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 500;
+  justify-content: center;
+  letter-spacing: 0.15px;
+  line-height: 16px;
+  margin: 0;
+  min-height: 18px;
+  outline: none;
+  padding: 7px 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition-duration: 300ms;
+  transition-property: background-color, border-color, color;
+  vertical-align: top;
+}
+button.fds-button, a.fds-button {
+  cursor: pointer;
+}
+
+.fds-button:focus-visible, .fds-button:hover, .fds-button:active, .fds-button.fds-is-active {
+  background-color: var(--fds-primary-button--background--active);
+  border-color: var(--fds-primary-button--background--active);
+  color: var(--fds-primary-button--label);
+  text-decoration: none;
+}
+.fds-button:disabled {
+  background-color: var(--fds-primary-button--background);
+  border: 1px solid var(--fds-primary-button--background);
+  cursor: default;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.fds-button.fds-is-full-width {
+  display: flex;
+}
+.fds-button.fds-is-square {
+  height: 36px;
+  min-width: 36px;
+  width: 36px;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  padding: 0;
+}
+.fds-button.fds-is-secondary, .fds-button.fds-is-secondary:disabled {
+  background: none;
+  border-color: currentColor;
+  color: var(--fds-secondary-button--label);
+}
+.fds-button.fds-is-secondary:focus-visible, .fds-button.fds-is-secondary:hover, .fds-button.fds-is-secondary:active, .fds-button.fds-is-secondary.fds-is-active {
+  color: var(--fds-secondary-button--label--active);
+}
+.fds-button.fds-is-text, .fds-button.fds-is-text:disabled {
+  background: none;
+  border: 0;
+  color: var(--fds-text-button--label);
+}
+.fds-button.fds-is-text:focus-visible, .fds-button.fds-is-text:hover, .fds-button.fds-is-text:active, .fds-button.fds-is-text.fds-is-active {
+  color: var(--fds-text-button--label--active);
+}
+.fds-button .wds-icon {
+  align-self: center;
+  pointer-events: none;
+  margin: 0 6px;
+}
+.fds-button .wds-icon:first-child {
+  margin-left: 0;
+}
+.fds-button .wds-icon:last-child {
+  margin-right: 0;
+}
+.fds-button .wds-list {
+  color: #1a1a1a;
+  font-weight: normal;
+  letter-spacing: normal;
+  text-align: left;
+  text-transform: none;
+}
+.fds-button .wds-dropdown__content {
+  top: calc(100% + 1px);
+}
+
+.fds-tabs {
+  --fds-tab-color: var(--fds-text-color);
+  --fds-tab-color--active: var(--fds-link-color);
+  align-items: flex-end;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fds-tabs__tab {
+  color: var(--fds-tab-color);
+  cursor: default;
+  flex-shrink: 0;
+  line-height: 14px;
+  position: relative;
+  transition: box-shadow 0.1s;
+}
+.fds-tabs__tab-label {
+  align-items: center;
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: bold;
+  height: 40px;
+  margin: 0 11px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.1s;
+  white-space: nowrap;
+}
+.fds-tabs__tab-label .wds-icon {
+  margin: 0 6px;
+}
+.fds-tabs__tab-label .wds-icon:first-child {
+  margin-left: 0;
+}
+.fds-tabs__tab-label .wds-icon:last-child {
+  margin-right: 0;
+}
+.fds-tabs__tab-label > a {
+  align-items: center;
+  color: inherit;
+  display: inline-flex;
+  height: 100%;
+  text-decoration: none;
+}
+.fds-tabs__tab:hover {
+  color: var(--fds-tab-color--active);
+}
+.fds-tabs__tab.fds-is-current {
+  color: var(--fds-tab-color--active);
+  box-shadow: inset 0 -2px 0 0 currentColor;
+}
+.fds-tabs__tab .wds-dropdown__content {
+  left: -7px;
+  transform: none;
+}
+
 .wds-community-bar {
   position: relative;
 }
