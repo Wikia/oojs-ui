@@ -35,12 +35,12 @@
     "publish-demo": "node scripts/publishDemo.js"
   },
   "dependencies": {
-    "jquery": "3.4.1",
+    "jquery": "^3.5.1",
     "oojs": "3.0.0",
     "wikimedia-ui-base": "0.14.0"
   },
   "devDependencies": {
-    "@fandom-frontend/design-system": "1.0.1-SITE-349.0",
+    "@fandom-frontend/design-system": "1.0.1-SITE-349.3",
     "eslint-config-wikimedia": "0.15.0",
     "eslint-plugin-html": "6.0.0",
     "gh-pages": "^3.1.0",
@@ -81,7 +81,7 @@
     "q": "1.5.1",
     "qunit": "2.9.1",
     "stylelint-config-standard": "^19.0.0",
-    "stylelint-config-wikimedia": "0.7.0",
+    "stylelint-config-wikimedia": "^0.10.3",
     "stylelint-order": "^4.0.0",
     "stylelint-prettier": "^1.1.2"
   },

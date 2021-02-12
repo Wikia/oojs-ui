@@ -11,7 +11,7 @@ var Q = require( 'q' ),
 
 function replaceDesignSystemSVGPath( file ) {
 	if ( typeof file === 'string' ) {
-		return file.replace( '~design-system-svg/', '../../../node_modules/@fandom/design-system/dist/svg/' );
+		return file.replace( '~design-system-svg/', '../../../node_modules/@fandom-frontend/design-system/dist/svg/' );
 	} else {
 		const newFile = {};
 		Object.keys( file ).forEach( (key) => {

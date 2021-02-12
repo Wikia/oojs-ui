@@ -1,45 +1,23 @@
 @import 'wds-variables/index';
-
-@color-page: @wds-fandom-color-light-gray;
-@color-buttons: @wds-fandom-color-link;
-@color-links: @wds-fandom-color-coral;
-
-//@color-page: @wds-fandom-color-navy;
-//@color-buttons: @wds-fandom-color-aqua;
-//@color-links: @wds-fandom-color-yellow;
-
-@themed-alert-color: @wds-color-alert;
-@themed-warning-color: @wds-color-warning;
-@themed-success-color: @wds-color-success;
-@themed-notice-color: @wds-color-message;
-
-@themed-button-label: contrast(@color-buttons, @white, @wds-fandom-color-black);
-@themed-link-label: contrast(@color-links, @white, @wds-fandom-color-black);
-
-@color-page-luma: luma(@color-page);
-@color-buttons-luma: luma(@color-buttons);
-@color-links-luma: luma(@color-links);
-@color-alert-luma: luma(@themed-alert-color);
-
 @import 'theming/index';
 
 body.oo-ui-theme-fandom {
-	background-color: @themed-page-background;
-	color: @themed-text-color;
+	background-color: var(--theme-article-background-color);
+	color: var(--theme-article-page-color);
 	font-family: @wds-fandom-font-family;
 	font-size: @wds-font-size-s;
 
 	.demo-header {
-		background-color: @themed-page-background;
+		background-color: var(--theme-article-background-color);
 	}
 
 	.demo-container.oo-ui-panelLayout {
-		border-color: @themed-border-color;
+		border-color: var(--theme-border-color);
 	}
 
 	.oo-ui-formLayout .oo-ui-fieldsetLayout:last-child {
-		background-color: @themed-page-background--secondary;
-		border-color: @themed-border-color;
+		background-color: var(--theme-article-background-color--secondary);
+		border-color: var(--theme-border-color);
 		border-radius: @wds-rounded-corner-radius;
 	}
 
@@ -51,14 +29,14 @@ body.oo-ui-theme-fandom {
 
 	.demo-theming {
 		section {
-			background-color: @themed-page-background--secondary;
+			background-color: var(--theme-article-background-color--secondary);
 			border-radius: @wds-rounded-corner-radius;
 			margin: 20px 0;
 			padding: 20px;
 		}
 
 		.theming-header {
-			border-bottom: 1px solid @themed-border-color;
+			border-bottom: 1px solid var(--theme-border-color);
 			font-size: @wds-font-size-l;
 			margin-bottom: 20px;
 			padding-bottom: 6px;
@@ -72,8 +50,8 @@ body.oo-ui-theme-fandom {
 		}
 
 		.variable-name {
-			background-color: @themed-page-background;
-			border: 1px solid @themed-border-color;
+			background-color: var(--theme-article-background-color);
+			border: 1px solid var(--theme-border-color);
 			border-radius: @wds-rounded-corner-radius;
 			display: inline-block;
 			font-weight: @wds-font-weight-bold;
@@ -96,24 +74,24 @@ body.oo-ui-theme-fandom {
 			}
 
 			&::before {
-				border: 1px solid @themed-border-color;
+				border: 1px solid var(--theme-border-color);
 				border-radius: @wds-rounded-corner-radius;
 				content: '';
 				display: block;
-				filter: drop-shadow(0 0 3px rgba(@black, 0.15));
+				filter: drop-shadow(0 0 3px rgba(var(--theme-article-text-color), 0.15));
 				height: @box-size;
 				width: @box-size;
 			}
 
 			small {
-				color: @themed-text-color--secondary;
+				color: rgba(var(--theme-article-text-color--rgb), 0.6);
 				display: block;
 				font-size: @wds-font-size-xs;
 			}
 
 			.color-usage {
-				background-color: @themed-page-background;
-				border: 1px solid @themed-border-color;
+				background-color: var(--theme-article-background-color);
+				border: 1px solid var(--theme-border-color);
 				border-radius: @wds-rounded-corner-radius;
 				font-size: @wds-font-size-xs;
 				padding: 8px 12px;
@@ -209,7 +187,7 @@ body.oo-ui-theme-fandom {
 			.classToBackgroundColor(themed-overlay-color);
 
 			.themed-window-box-shadow::before {
-				box-shadow: @themed-window-box-shadow;
+				box-shadow: var(--theme-box-shadow);
 			}
 		}
 
@@ -221,7 +199,7 @@ body.oo-ui-theme-fandom {
 }
 
 .classToBackgroundColor(@colorName) {
-	.@{colorName}::before {
-		background-color: @@colorName;
-	}
+	//.@{colorName}::before {
+	//	background-color: @@colorName;
+	//}
 }

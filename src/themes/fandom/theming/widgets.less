@@ -3,7 +3,7 @@
 		.oo-ui-buttonElement-framed {
 			&.oo-ui-widget-disabled + .oo-ui-widget-disabled {
 				> .oo-ui-buttonElement-button {
-					border-left-color: rgba(@themed-border-color, 0.5);
+					border-left-color: rgba(var(--theme-border-color), 0.5);
 				}
 			}
 		}
@@ -13,7 +13,7 @@
 				&.oo-ui-toggleWidget-on + .oo-ui-toggleWidget-on {
 					> .oo-ui-buttonElement-button,
 					> .oo-ui-buttonElement-button:active {
-						border-left-color: @themed-border-color;
+						border-left-color: var(--theme-border-color);
 					}
 				}
 			}
@@ -24,7 +24,7 @@
 		.oo-ui-buttonOptionWidget {
 			&.oo-ui-widget-disabled + .oo-ui-widget-disabled {
 				> .oo-ui-buttonElement-button {
-					border-left-color: rgba(@themed-border-color, 0.5);
+					border-left-color: rgba(var(--theme-border-color), 0.5);
 				}
 			}
 		}
@@ -75,8 +75,8 @@
 .theming-dropdowns(@accent-color) {
 	.oo-ui-dropdownWidget-handle,
 	.oo-ui-dropdownInputWidget select {
-		background-color: @themed-page-background--secondary;
-		border-color: @themed-border-color;
+		background-color: var(--theme-article-background-color--secondary);
+		border-color: var(--theme-border-color);
 	}
 
 	.oo-ui-dropdownWidget-handle.oo-ui-widget-enabled &-handle,
@@ -96,7 +96,7 @@
 		color: initial;
 
 		option {
-			color: @themed-text-color;
+			color: var(--theme-article-text-color);
 		}
 	}
 }
@@ -117,15 +117,15 @@
 	}
 
 	.oo-ui-menuSelectWidget {
-		background-color: @themed-page-background--windows;
-		border: @themed-border-color;
-		box-shadow: @themed-window-box-shadow;
+		background-color: var(--theme-article-background-color--secondary);
+		border: var(--theme-border-color);
+		box-shadow: var(--theme-box-shadow);
 	}
 }
 
 .theming-outlineControls(@accent-color, @accent-color--fadeout, @accent-color--active) {
 	.oo-ui-outlineControlsWidget {
-		background-color: @themed-page-background--secondary;
+		background-color: var(--theme-article-background-color--secondary);
 	}
 
 	.oo-ui-outlineOptionWidget {
@@ -143,15 +143,15 @@
 }
 
 .theming-popups() {
-	@popup-background-color: @themed-page-background--windows;
-	@popup-border-color: @themed-border-color;
+	@popup-background-color: var(--theme-article-background-color--secondary);
+	@popup-border-color: var(--theme-border-color);
 
 	.oo-ui-popupWidget {
 		&-popup {
 			background-color: @popup-background-color;
 			border: @popup-border-color;
-			color: @themed-text-color;
-			filter: drop-shadow(0 2px 1px rgba(@black, 0.3));
+			color: var(--theme-article-text-color);
+			filter: drop-shadow(0 2px 1px rgba(var(--theme-article-text-color--rgb), 0.3));
 		}
 
 		&-anchored.oo-ui-popupWidget {
@@ -170,7 +170,7 @@
 			&-anchored-bottom {
 				.oo-ui-popupWidget-anchor {
 					&::before {
-						border-top-color: @themed-border-color;
+						border-top-color: var(--theme-border-color);
 					}
 
 					&::after {
@@ -182,7 +182,7 @@
 			&-anchored-start {
 				.oo-ui-popupWidget-anchor {
 					&::before {
-						border-right-color: @themed-border-color;
+						border-right-color: var(--theme-border-color);
 					}
 
 					&::after {
@@ -194,7 +194,7 @@
 			&-anchored-end {
 				.oo-ui-popupWidget-anchor {
 					&::before {
-						border-left-color: @themed-border-color;
+						border-left-color: var(--theme-border-color);
 					}
 
 					&::after {
@@ -208,8 +208,8 @@
 
 .theming-progressBars(@accent-color) {
 	.oo-ui-progressBarWidget {
-		background-color: @themed-page-background--secondary;
-		border-color: @themed-border-color;
+		background-color: var(--theme-article-background-color--secondary);
+		border-color: var(--theme-border-color);
 
 		&.oo-ui-widget-enabled {
 			.oo-ui-progressBarWidget-bar {
@@ -219,7 +219,7 @@
 
 		&.oo-ui-widget-disabled {
 			.oo-ui-progressBarWidget-bar {
-				background-color: @themed-overlay-color;
+				background-color: var(--theme-overlay-color);
 			}
 		}
 	}
@@ -251,8 +251,8 @@
 .theming-fileSelects(@accent-color, @accent-color--fadeout) {
 	.oo-ui-selectFileWidget {
 		&-dropTarget {
-			background-color: @themed-page-background--secondary;
-			border-color: @themed-border-color;
+			background-color: var(--theme-article-background-color--secondary);
+			border-color: var(--theme-border-color);
 		}
 
 		&.oo-ui-widget-enabled {
@@ -283,8 +283,8 @@
 
 	.oo-ui-tabOptionWidget {
 		.oo-ui-tabSelectWidget-framed & {
-			background-color: @themed-page-background--secondary;
-			color: @themed-text-color;
+			background-color: var(--theme-article-background-color--secondary);
+			color: var(--theme-article-text-color);
 
 			&.oo-ui-optionWidget-selected {
 				background-color: @accent-color;
@@ -300,7 +300,7 @@
 
 		.oo-ui-tabSelectWidget-frameless &,
 		.oo-ui-tabSelectWidget:not(.oo-ui-tabSelectWidget-framed) & {
-			border-bottom-color: @themed-border-color;
+			border-bottom-color: var(--theme-border-color);
 
 			&.oo-ui-optionWidget-selected,
 			&.oo-ui-widget-enabled:active {
@@ -317,7 +317,7 @@
 
 .theming-tags(@accent-color, @accent-color--fadeout) {
 	.oo-ui-tagItemWidget {
-		color: @themed-text-color;
+		color: var(--theme-article-text-color);
 
 		.oo-ui-buttonElement-button {
 			color: inherit;
@@ -342,12 +342,12 @@
 			}
 
 			&.oo-ui-flaggedElement-invalid {
-				background-color: @themed-alert-color--fadeout;
-				color: @themed-alert-color;
+				background-color: var(--theme-alert-color--fadeout);
+				color: var(--theme-alert-color);
 
 				&:hover,
 				&:focus {
-					color: @themed-alert-color--hover;
+					color: var(--theme-alert-color--hover);
 				}
 			}
 		}
@@ -355,7 +355,7 @@
 
 	.oo-ui-tagMultiselectWidget {
 		&-handle {
-			border-color: @themed-border-color;
+			border-color: var(--theme-border-color);
 
 			> .oo-ui-tagMultiselectWidget-content > input {
 				.themed-placeholder();
@@ -364,7 +364,7 @@
 
 		&.oo-ui-widget-enabled {
 			.oo-ui-tagMultiselectWidget-handle {
-				background-color: @themed-page-background--secondary;
+				background-color: var(--theme-article-background-color--secondary);
 			}
 
 			&.oo-ui-tagMultiselectWidget-inlined {
@@ -380,23 +380,23 @@
 				&.oo-ui-flaggedElement-invalid {
 					.oo-ui-tagMultiselectWidget-handle,
 					&:hover .oo-ui-tagMultiselectWidget-handle {
-						border-color: @themed-alert-color;
+						border-color: var(--theme-alert-color);
 					}
 				}
 			}
 
 			&.oo-ui-tagMultiselectWidget-outlined {
 				.oo-ui-tagMultiselectWidget-handle {
-					background-color: @themed-page-background--secondary;
+					background-color: var(--theme-article-background-color--secondary);
 				}
 
 				&.oo-ui-flaggedElement-invalid .oo-ui-inputWidget-input {
-					border-color: @themed-alert-color;
+					border-color: var(--theme-alert-color);
 				}
 			}
 
 			&.oo-ui-flaggedElement-invalid .oo-ui-inputWidget-input {
-				color: @themed-alert-color;
+				color: var(--theme-alert-color);
 			}
 		}
 
@@ -429,8 +429,8 @@
 	.oo-ui-textInputWidget {
 		.oo-ui-inputWidget-input {
 			background-color: transparent;
-			border-color: @themed-border-color;
-			color: @themed-text-color;
+			border-color: var(--theme-border-color);
+			color: var(--theme-article-text-color);
 		}
 
 		&.oo-ui-widget-enabled {
@@ -450,22 +450,22 @@
 				&[readonly] {
 					&:hover,
 					&:focus {
-						border-color: @themed-border-color;
+						border-color: var(--theme-border-color);
 					}
 				}
 			}
 
 			&.oo-ui-flaggedElement-invalid {
 				.oo-ui-inputWidget-input {
-					border-color: @themed-alert-color;
+					border-color: var(--theme-alert-color);
 
 					&:hover,
 					&:focus {
-						border-color: @themed-alert-color;
+						border-color: var(--theme-alert-color);
 					}
 
 					&:focus {
-						.active-box-shadow(@themed-alert-color);
+						.active-box-shadow(var(--theme-alert-color));
 					}
 				}
 			}
@@ -476,10 +476,10 @@
 .theming-messages(@background-color, @text-color) {
 	.oo-ui-messageWidget {
 		&.oo-ui-messageWidget-block {
-			box-shadow: 0 2px 6px 0 rgba(@black, 0.2);
+			box-shadow: 0 2px 6px 0 rgba(var(--theme-article-text-color--rgb), 0.2);
 
 			> .oo-ui-iconElement-icon {
-				color: @white;
+				color: @wds-color-white;
 			}
 
 			> .oo-ui-labelElement-label {
@@ -488,37 +488,37 @@
 			}
 
 			&.oo-ui-flaggedElement-error {
-				background-color: @themed-alert-color;
+				background-color: var(--theme-alert-color);
 			}
 
 			&.oo-ui-flaggedElement-warning {
-				background-color: @themed-warning-color;
+				background-color: var(--theme-warning-color);
 			}
 
 			&.oo-ui-flaggedElement-success {
-				background-color: @themed-success-color;
+				background-color: var(--theme-success-color);
 			}
 
 			&.oo-ui-flaggedElement-notice {
-				background-color: @themed-notice-color;
+				background-color: var(--theme-message-color);
 			}
 		}
 
 		&:not(.oo-ui-messageWidget-block) {
 			&.oo-ui-flaggedElement-error {
-				color: @themed-alert-color;
+				color: var(--theme-alert-color);
 			}
 
 			&.oo-ui-flaggedElement-warning {
-				color: @themed-warning-color;
+				color: var(--theme-warning-color);
 			}
 
 			&.oo-ui-flaggedElement-success {
-				color: @themed-success-color;
+				color: var(--theme-success-color);
 			}
 
 			&.oo-ui-flaggedElement-notice {
-				color: @themed-notice-color;
+				color: var(--theme-message-color);
 			}
 		}
 	}
@@ -530,7 +530,7 @@
 
 .themed-placeholder() {
 	&::placeholder {
-		color: @themed-text-color;
+		color: var(--theme-article-text-color);
 		opacity: 0.4;
 	}
 }

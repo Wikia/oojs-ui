@@ -1,4 +1,3 @@
-@import 'colors';
 @import 'elements';
 @import 'layouts';
 @import 'windows';
@@ -6,9 +5,9 @@
 @import 'widgets';
 
 // elements
-.theming-text-buttons(@themed-text-color, @themed-text-color--hover);
-.theming-secondary-buttons(@themed-text-color, @themed-text-color--hover);
-.theming-primary-buttons(@themed-button-background, @themed-button-background--hover, @themed-button-label);
+.theming-text-buttons(var(--theme-article-text-color), var(--theme-article-text-color--hover));
+.theming-secondary-buttons(var(--theme-article-text-color), var(--theme-article-text-color--hover));
+.theming-primary-buttons(var(--theme-accent-color), var(--theme-accent-color--hover), --theme-accent-label-color);
 .theming-pending();
 
 // layouts
@@ -18,20 +17,20 @@
 .theming-windows();
 
 // tools
-.theming-tools(@themed-page-background--secondary, @toolbar-text-color, @themed-border-color, @themed-link-color, @themed-link-color--fadeout, @themed-link-color--hover, @themed-link-color--active); // stylelint-disable-line
+.theming-tools(var(--theme-article-background-color--secondary), var(--theme-article-text-color), var(--theme-border-color), var(--theme-link-color), var(--theme-link-color--fadeout), var(--theme-link-color--hover), var(--theme-link-color--fadeout)); // stylelint-disable-line
 
 // widgets
 .theming-button-widgets();
-.theming-checkboxes(@themed-border-color, @themed-link-color);
-.theming-dropdowns(@themed-link-color);
-.theming-menuOptions(@themed-link-color, @themed-link-color--fadeout, @themed-link-color--active);
-.theming-outlineControls(@themed-link-color, @themed-link-color--fadeout, @themed-link-color--active);
+.theming-checkboxes(var(--theme-border-color), var(--theme-link-color));
+.theming-dropdowns(var(--theme-link-color));
+.theming-menuOptions(var(--theme-link-color), var(--theme-link-color--fadeout), var(--theme-link-color--fadeout));
+.theming-outlineControls(var(--theme-link-color), var(--theme-link-color--fadeout), var(--theme-link-color--fadeout));
 .theming-popups();
-.theming-progressBars(@themed-link-color);
-.theming-radios(@themed-border-color, @themed-link-color);
-.theming-fileSelects(@themed-link-color, @themed-link-color--fadeout);
-.theming-tabs(@themed-link-color, @themed-link-label);
-.theming-tags(@themed-link-color, @themed-link-color--fadeout);
-.theming-toggles(mix(@themed-page-background, @themed-text-color, 50%), @white, mix(@themed-page-background, @themed-link-color, 50%), @themed-link-color);  // stylelint-disable-line
-.theming-inputs(@themed-link-color, @themed-link-color--fadeout);
-.theming-messages(@white, @text-color--dark);
+.theming-progressBars(var(--theme-link-color));
+.theming-radios(var(--theme-border-color), var(--theme-link-color));
+.theming-fileSelects(var(--theme-link-color), var(--theme-link-color--fadeout));
+.theming-tabs(var(--theme-link-color), var(--theme-link-label-color));
+.theming-tags(var(--theme-link-color), var(--theme-link-color--fadeout));
+.theming-toggles(var(--theme-article-text-mix-50), var(--theme-article-background-color), var(--theme-article-accent-mix-50), var(--theme-accent-color)); // stylelint-disable-line
+.theming-inputs(var(--theme-link-color), var(--theme-link-color--fadeout));
+.theming-messages(var(--theme-article-background-color--secondary), var(--theme-article-text-color));

@@ -1,13 +1,13 @@
 .theming-windows() {
 	.oo-ui-messageDialog {
 		&-content > .oo-ui-window-foot {
-			outline-color: @themed-border-color;
+			outline-color: var(--theme-border-color);
 		}
 
 		&-actions {
 			&-vertical {
 				.oo-ui-actionWidget {
-					border-bottom-color: @themed-border-color;
+					border-bottom-color: var(--theme-border-color);
 				}
 			}
 		}
@@ -17,7 +17,7 @@
 		&-content {
 			.oo-ui-window-head,
 			.oo-ui-window-foot {
-				outline-color: @themed-border-color;
+				outline-color: var(--theme-border-color);
 			}
 		}
 
@@ -27,7 +27,7 @@
 					&:hover,
 					&:focus,
 					&:active {
-						border-right-color: @themed-border-color;
+						border-right-color: var(--theme-border-color);
 					}
 				}
 			}
@@ -37,7 +37,7 @@
 			&-primary {
 				.oo-ui-actionWidget {
 					> .oo-ui-buttonElement-button {
-						border-left-color: @themed-border-color;
+						border-left-color: var(--theme-border-color);
 					}
 
 					&:not(.oo-ui-flaggedElement-progressive):not(.oo-ui-flaggedElement-destructive) {
@@ -45,7 +45,7 @@
 							&:hover,
 							&:focus,
 							&:active {
-								border-left-color: @themed-border-color;
+								border-left-color: var(--theme-border-color);
 							}
 						}
 					}
@@ -55,7 +55,7 @@
 			&-safe,
 			&-other {
 				.oo-ui-actionWidget > .oo-ui-buttonElement-button {
-					border-right-color: @themed-border-color;
+					border-right-color: var(--theme-border-color);
 				}
 			}
 
@@ -65,7 +65,7 @@
 						&:hover,
 						&:active,
 						&:focus {
-							background-color: @themed-page-background--secondary;
+							background-color: var(--theme-article-background-color--secondary);
 						}
 					}
 				}
@@ -73,21 +73,21 @@
 		}
 
 		&-errors {
-			background-color: @themed-page-background--secondary;
+			background-color: var(--theme-article-background-color--secondary);
 		}
 
 		&-error {
-			background-color: @themed-alert-color--fadeout;
-			border-color: @themed-alert-color;
+			background-color: var(--theme-alert-color--fadeout);
+			border-color: var(--theme-alert-color);
 		}
 	}
 
 	.oo-ui-windowManager {
 		&-modal > .oo-ui-dialog {
-			background-color: @themed-overlay-color;
+			background-color: var(--theme-overlay-color);
 
 			> .oo-ui-window-frame {
-				background-color: @themed-page-background--windows;
+				background-color: var(--theme-article-background-color--secondary);
 			}
 		}
 	}

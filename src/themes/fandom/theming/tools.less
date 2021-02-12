@@ -37,12 +37,12 @@
 
 				&-destructive {
 					.oo-ui-tool-link {
-						color: @themed-alert-color;
+						color: var(--theme-alert-color);
 
 						&:hover,
 						&:active,
 						&:focus {
-							color: @themed-alert-color--hover;
+							color: var(--theme-alert-color--hover);
 						}
 					}
 				}
@@ -52,15 +52,15 @@
 				&.oo-ui-flaggedElement {
 					&-progressive {
 						.oo-ui-tool-link {
-							background-color: @themed-button-background;
-							border-color: @themed-button-background;
-							color: @themed-button-label;
+							background-color: var(--theme-accent-background-color);
+							border-color: var(--theme-accent-background-color);
+							color: var(--theme-accent-label-color);
 
 							&:hover,
 							&:active,
 							&:focus {
-								background-color: @themed-button-background--hover;
-								border-color: @themed-button-background--hover;
+								background-color: var(--theme-accent-background-color)--hover;
+								border-color: var(--theme-accent-background-color)--hover;
 							}
 						}
 					}
@@ -92,10 +92,10 @@
 	}
 
 	.oo-ui-toolGroup {
-		border-right-color: @toolbar-separator-color;
+		border-right-color: var(--theme-article-text-mix-50);
 
 		.oo-ui-toolbar-actions & {
-			border-left-color: @toolbar-separator-color;
+			border-left-color: var(--theme-article-text-mix-50);
 		}
 	}
 
@@ -117,13 +117,13 @@
 
 	.oo-ui-popupToolGroup {
 		&-header {
-			color: @themed-text-color--secondary;
+			color: var(--theme-article-text-color)--secondary;
 		}
 
 		&-tools {
-			background-color: @themed-page-background--windows;
-			border-color: @themed-border-color;
-			box-shadow: @themed-window-box-shadow;
+			background-color: var(--theme-article-background-color--secondary);
+			border-color: var(--theme-border-color);
+			box-shadow: var(--theme-box-shadow);
 		}
 
 		&.oo-ui-widget-enabled {

@@ -44,7 +44,7 @@
 }
 
 .wds-midlight {
-  --wds-midlight--color: rgba(var(--theme-accent-color-rgb), 0.15);
+  --wds-midlight--color: var(--theme-accent-color--fadeout);
   background-image: linear-gradient(to top, var(--wds-midlight--color) 54%, transparent 54%, transparent 100%);
   box-decoration-break: clone;
   display: inline;
@@ -1033,7 +1033,7 @@ button.wds-button, a.wds-button {
   --wds-pill-background-color: rgba(var(--theme-article-text-color--rgb), 0.05);
   --wds-pill-border-color: var(--theme-border-color);
   --wds-pill-label-color: var(--theme-article-text-color);
-  --wds-pill-background-color--active: rgba(var(--theme-accent-color--rgb), 0.15);
+  --wds-pill-background-color--active: var(--theme-accent-color--fadeout);
   --wds-pill-border-color--active: var(--theme-accent-color);
   --wds-pill-label-color--active: var(--theme-article-text-color);
   background-color: var(--wds-pill-background-color);
@@ -2866,6 +2866,7 @@ button.wds-button, a.wds-button {
 
 :root {
   --theme-article-background-color: #fff;
+  --theme-article-background-color--rgb: 255, 255, 255;
   --theme-article-background-color--secondary: #fff;
   --theme-article-text-color: #3a3a3a;
   --theme-article-text-color--rgb: 58, 58, 58;
@@ -2873,14 +2874,25 @@ button.wds-button, a.wds-button {
   --theme-link-color: #088488;
   --theme-link-color--rgb: 8, 132, 136;
   --theme-link-color--hover: #0ee2e8;
-  --theme-border-color: #cccccc;
+  --theme-link-color--fadeout: rgba(8, 132, 136, 0.15);
+  --theme-link-label-color: #fff;
   --theme-accent-color: #00cdd0;
   --theme-accent-color--rgb: 0, 205, 208;
   --theme-accent-color--hover: #00686a;
+  --theme-accent-color--fadeout: rgba(0, 205, 208, 0.15);
   --theme-accent-label-color: #3a3a3a;
+  --theme-border-color: #cccccc;
   --theme-overlay-color: rgba(58, 58, 58, 0.5);
+  --theme-box-shadow: 0 3px 12px 0 rgba(58, 58, 58, 0.3);
   --theme-article-text-mix-50: #9d9d9d;
   --theme-article-accent-mix-50: #80e6e8;
+  /*** COMPONENTS COLORS ***/
+  --theme-alert-color: #e81a3f;
+  --theme-alert-color--hover: #8e0e25;
+  --theme-alert-color--fadeout: rgba(232, 26, 63, 0.15);
+  --theme-warning-color: #de5e33;
+  --theme-success-color: #e81a3f;
+  --theme-message-color: #008c8f;
   --theme-header-background-color: #002a32;
   --theme-header-background-color--rgb: 0, 42, 50;
   --theme-header-text-color: #fff;
@@ -2889,5 +2901,4 @@ button.wds-button, a.wds-button {
   --global-navigation-link-color: #00d6d6;
   --global-navigation-text-color: #fff;
   --global-navigation-border-color: #cccccc;
-  --theme-alert-color: #e81a3f;
 }
