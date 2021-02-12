@@ -809,11 +809,13 @@ button.wds-button, a.wds-button {
 }
 
 .wds-link {
-  color: var(--theme-link-color);
+  --wds-link-color: $link-color;
+  --wds-link-color--hover: $link-color--hover;
+  color: var(--wds-link-color);
   transition: color 300ms;
 }
 .wds-link:hover, .wds-link:focus, .wds-link:active {
-  color: var(--theme-link-color--hover);
+  color: var(--wds-link-color--hover);
 }
 
 .wds-list {
@@ -2860,4 +2862,32 @@ button.wds-button, a.wds-button {
 }
 .wds-is-wikia-org__link:hover, .wds-is-wikia-org__link:focus, .wds-is-wikia-org__link:active, .wds-is-wikia-org__start-a-wiki:hover, .wds-is-wikia-org__start-a-wiki:focus, .wds-is-wikia-org__start-a-wiki:active {
   color: var(--global-navigation-link-color) !important;
+}
+
+:root {
+  --theme-article-background-color: #fff;
+  --theme-article-background-color--secondary: #fff;
+  --theme-article-text-color: #3a3a3a;
+  --theme-article-text-color--rgb: 58, 58, 58;
+  --theme-article-text-color--hover: #6d6d6d;
+  --theme-link-color: #088488;
+  --theme-link-color--rgb: 8, 132, 136;
+  --theme-link-color--hover: #0ee2e8;
+  --theme-border-color: #cccccc;
+  --theme-accent-color: #00cdd0;
+  --theme-accent-color--rgb: 0, 205, 208;
+  --theme-accent-color--hover: #00686a;
+  --theme-accent-label-color: #3a3a3a;
+  --theme-overlay-color: rgba(58, 58, 58, 0.5);
+  --theme-article-text-mix-50: #9d9d9d;
+  --theme-article-accent-mix-50: #80e6e8;
+  --theme-header-background-color: #002a32;
+  --theme-header-background-color--rgb: 0, 42, 50;
+  --theme-header-text-color: #fff;
+  --theme-header-text-color--hover: #cccccc;
+  --global-navigation-background-color: #002a32;
+  --global-navigation-link-color: #00d6d6;
+  --global-navigation-text-color: #fff;
+  --global-navigation-border-color: #cccccc;
+  --theme-alert-color: #e81a3f;
 }
