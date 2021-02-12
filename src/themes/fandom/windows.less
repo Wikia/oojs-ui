@@ -5,19 +5,18 @@
 }
 
 .theme-oo-ui-dialog() {
-	font-size: @font-size-big;
+	font-size: @wds-font-size-base;
 }
 
 .theme-oo-ui-messageDialog() {
 	&-content > .oo-ui-window-foot {
-		outline-style: @border-style-base;
-		outline-width: @border-width-base;
+		outline: 1px solid var(--theme-border-color);
 	}
 
 	&-title,
 	&-message {
 		display: block;
-		line-height: @line-height-base;
+		line-height: @wds-line-height-normal;
 		text-align: center;
 	}
 
@@ -53,32 +52,31 @@
 
 		&-horizontal {
 			.oo-ui-actionWidget {
-				border-right-style: @border-style-base;
-				border-right-width: @border-width-base;
+				border-right-style: solid;
+				border-right-width: 1px;
 				margin: 0;
 
 				&:first-child > .oo-ui-buttonElement-button {
-					border-radius: 0 0 0 @border-radius-base;
+					border-radius: 0 0 0 @wds-rounded-corner-radius;
 				}
 
 				&:last-child {
 					border-right-width: 0;
 
 					> .oo-ui-buttonElement-button {
-						border-radius: 0 0 @border-radius-base 0;
+						border-radius: 0 0 @wds-rounded-corner-radius 0;
 					}
 				}
 
 				&:only-child > .oo-ui-buttonElement-button {
-					border-radius: 0 0 @border-radius-base @border-radius-base;
+					border-radius: 0 0 @wds-rounded-corner-radius @wds-rounded-corner-radius;
 				}
 			}
 		}
 
 		&-vertical {
 			.oo-ui-actionWidget {
-				border-bottom-style: @border-style-base;
-				border-bottom-width: @border-width-base;
+				border: 1px solid var(--theme-border-color);
 				margin: 0;
 
 				&:last-child {
@@ -86,7 +84,7 @@
 				}
 
 				&:last-child > .oo-ui-buttonElement-button {
-					border-radius: 0 0 @border-radius-base @border-radius-base;
+					border-radius: 0 0 @wds-rounded-corner-radius @wds-rounded-corner-radius;
 				}
 			}
 		}
@@ -98,8 +96,7 @@
 		.oo-ui-window-head,
 		.oo-ui-window-foot {
 			min-height: @size-dialog-bar--desktop;
-			outline-style: @border-style-base;
-			outline-width: @border-width-base;
+			outline: 1px solid var(--theme-border-color);
 		}
 
 		.oo-ui-window-body {
@@ -126,7 +123,7 @@
 
 	&-title {
 		font-size: @wds-font-size-l;
-		font-weight: @font-weight-bold;
+		font-weight: @wds-font-weight-bold;
 		line-height: @size-dialog-bar--desktop;
 	}
 
@@ -150,15 +147,16 @@
 				&:focus,
 				&:active {
 					border-left-color: transparent;
+					border-right-color: var(--theme-border-color);
 				}
 			}
 		}
 
 		&.oo-ui-iconElement {
 			.oo-ui-icon-close {
-				height: @size-icon-tiny;
-				min-width: @size-icon-tiny;
-				width: @size-icon-tiny;
+				height: @wds-icon-tiny-size;
+				min-width: @wds-icon-tiny-size;
+				width: @wds-icon-tiny-size;
 			}
 		}
 
@@ -177,11 +175,12 @@
 
 			.oo-ui-actionWidget {
 				> .oo-ui-buttonElement-button {
+					border-left-color: var(--theme-border-color);
 					border-right-color: transparent;
 
 					// border radius only for non-fullscreen dialogs
 					.oo-ui-windowManager-floating & {
-						border-top-right-radius: @border-radius-base;
+						border-top-right-radius: @wds-rounded-corner-radius;
 					}
 				}
 
@@ -190,6 +189,7 @@
 						&:hover,
 						&:focus,
 						&:active {
+							border-left-color: var(--theme-border-color);
 							border-right-color: transparent;
 						}
 					}
@@ -209,6 +209,7 @@
 
 			.oo-ui-actionWidget > .oo-ui-buttonElement-button {
 				border-left-color: transparent;
+				border-right-color: var(--theme-border-color);
 			}
 		}
 
@@ -217,11 +218,12 @@
 				> .oo-ui-buttonElement-button {
 					background-color: transparent;
 					border-right-color: transparent;
-					border-top-left-radius: @border-radius-base;
+					border-top-left-radius: @wds-rounded-corner-radius;
 
 					&:hover,
 					&:active,
 					&:focus {
+						background-color: var(--theme-article-background-color--secondary);
 						border-bottom-color: transparent;
 						border-top-color: transparent;
 					}
@@ -238,7 +240,7 @@
 				}
 
 				&:first-child > .oo-ui-buttonElement-button {
-					border-bottom-left-radius: @border-radius-base;
+					border-bottom-left-radius: @wds-rounded-corner-radius;
 				}
 			}
 		}
@@ -249,7 +251,8 @@
 	}
 
 	&-errors {
-		padding: @dialog-padding;
+		background-color: var(--theme-article-background-color--secondary);
+		padding: @wds-dialog-padding;
 		text-align: center;
 
 		.oo-ui-buttonWidget {
@@ -263,8 +266,8 @@
 	}
 
 	&-error {
-		border-style: @border-style-base;
-		border-width: @border-width-base;
+		background-color: var(--theme-alert-color--fadeout);
+		border: 1px solid var(--theme-alert-color);
 		margin: 1em 0 0;
 		padding: 16px 24px;
 		text-align: left;
@@ -292,7 +295,7 @@
 		.oo-ui-actionWidget {
 			&.oo-ui-labelElement {
 				> .oo-ui-buttonElement-button {
-					padding: @padding-vertical-base @padding-horizontal-base;
+					padding: @wds-button-vertical-padding @wds-button-horizontal-padding;
 				}
 			}
 		}
@@ -301,14 +304,16 @@
 
 .theme-oo-ui-windowManager() {
 	&-modal > .oo-ui-dialog {
+		background-color: var(--theme-overlay-color);
 		opacity: 0;
 		z-index: inherit;
-		.oo-ui-transition(opacity @transition-base);
+		.oo-ui-transition(opacity @wds-button-transition-duration);
 
 		> .oo-ui-window-frame {
+			background-color: var(--theme-article-background-color--secondary);
 			opacity: 0;
 			.oo-ui-transform(scale(0.5));
-			.oo-ui-transition(all @transition-base);
+			.oo-ui-transition(all @wds-button-transition-duration);
 		}
 
 		&.oo-ui-window-setup {
@@ -324,7 +329,7 @@
 	}
 
 	&-modal&-floating > .oo-ui-dialog > .oo-ui-window-frame {
-		border-radius: @border-radius-base;
+		border-radius: @wds-rounded-corner-radius;
 		bottom: 1em;
 		max-height: e('calc( 100% - 2em )');
 		top: 1em;

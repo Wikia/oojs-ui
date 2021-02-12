@@ -2,24 +2,10 @@
 
 @opacity--disabled: 0.5;
 
-// Typography
-@font-weight-bold: @wds-font-weight-bold;
-@line-height-base: @wds-line-height-normal;
-@line-height-none: @wds-line-height-none;
-@font-size-base: @wds-font-size-s;
-@font-size-small: @wds-font-size-xs;
-@font-size-tiny: @wds-font-size-xxs;
-@font-size-big: @wds-font-size-base;
-
 // Sizes
 @size-input-binary: 16px;
 @size-base: 34px;
 @size-anchor: 7px;
-@size-icon: @wds-icon-small-size;
-@size-icon-tiny: @wds-icon-tiny-size;
-@size-indicator: @size-icon-tiny;
-@min-size-icon: @size-icon;
-@min-size-indicator: @size-indicator;
 @max-width-base: 50em;
 @max-width-input: @max-width-base;
 @combo-button-width: 37px;
@@ -29,23 +15,14 @@
 @height-tagitem: 22px;
 @height-tabselect: 40px;
 
-// Borders
-@border-width-base: 1px;
-@border-style-base: solid;
-@border-color-base: @wds-fandom-color-mid-light-gray;
-@border-base: @border-width-base @border-style-base @border-color-base;
-@border-radius-base: @wds-rounded-corner-radius;
-
 // Dialog
-@size-dialog-menu: 200px;
 @size-dialog-bar--desktop: 52px;
 @size-dialog-bar--mobile: @size-dialog-bar--desktop;
 @size-dialog-message-bar: 40px;
 
 // Margins & paddings
-@margin-dialog-bar-button-framed: 6px;
 @margin-search: 12px;
-@margin-taboption: @margin-dialog-bar-button-framed;
+@margin-taboption: 6px;
 @margin-top-form-fieldset: 24px;
 @margin-top-fieldlayout--labelled: 12px;
 @margin-top-message: 8px;
@@ -54,9 +31,6 @@
 @margin-end-fieldlayout-help: -8px;
 @margin-end-widget: 8px;
 
-@dialog-padding: @wds-dialog-padding;
-@padding-horizontal-base: @wds-button-horizontal-padding;
-@padding-vertical-base: @wds-button-vertical-padding;
 @padding-vertical-label: 4px;
 @padding-start-fieldlayout-label: 6px;
 @padding-start-input-text-icon-label: 37px;
@@ -70,7 +44,10 @@
 @tool-horizontal-padding: 10px;
 @tool-horizontal-gap: 4px;
 
-// Transitions
-@transition-base: @wds-button-transition-duration;
-@transition-dialog: ease-out @transition-base;
-@transition-ease-medium: @transition-base;
+// Variables required to comile base OOUI styles
+@transition-dialog: ease-out @wds-button-transition-duration;
+@size-dialog-menu: 200px;
+@size-icon: @wds-icon-small-size;
+@min-size-icon: @wds-icon-small-size;
+@size-indicator: @wds-icon-tiny-size;
+@min-size-indicator: @wds-icon-tiny-size;

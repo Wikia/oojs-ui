@@ -3,9 +3,10 @@
 
 .theme-oo-ui-toolbar() {
 	&-bar {
-		border-radius: @border-radius-base;
-		border-style: @border-style-base;
-		border-width: @border-width-base;
+		background-color: var(--theme-article-background-color--secondary);
+		border: 1px solid var(--theme-border-color);
+		border-radius: @wds-rounded-corner-radius;
+		color: var(--theme-article-text-color);
 		padding: 13px;
 
 		.oo-ui-toolbar-actions & {
@@ -27,9 +28,21 @@
 	.flex-button(~'.oo-ui-tool-link', @tool-vertical-padding, @tool-horizontal-padding, @tool-horizontal-gap);
 
 	.oo-ui-tool-link {
-		border-radius: @border-radius-base;
+		border-radius: @wds-rounded-corner-radius;
 
-		.oo-ui-transition(background-color @transition-base, border-color @transition-base, color @transition-base);
+		.oo-ui-transition(background-color @wds-button-transition-duration, border-color @wds-button-transition-duration, color @wds-button-transition-duration);
+
+		&:hover,
+		&:focus {
+			background-color: var(--theme-link-color--fadeout);
+		}
+
+		&:active,
+		&:active:hover {
+			// active
+			background-color: var(--theme-link-color--fadeout);
+			color: var(--theme-link-color);
+		}
 	}
 
 	&.oo-ui-widget-enabled {
@@ -37,11 +50,28 @@
 			&-progressive {
 				.oo-ui-tool-link {
 					border: 1px solid currentColor;
+					color: var(--theme-link-color);
 
 					&:hover,
 					&:active,
 					&:focus {
 						background-color: transparent;
+						color: var(--theme-link-color--hover);
+					}
+				}
+
+				&.oo-ui-flaggedElement-primary {
+					.oo-ui-tool-link {
+						background-color: var(--theme-accent-color);
+						border-color: var(--theme-accent-color);
+						color: var(--theme-accent-label-color);
+
+						&:hover,
+						&:active,
+						&:focus {
+							background-color: var(--theme-accent-color--hover);
+							border-color: var(--theme-accent-color--hover);
+						}
 					}
 				}
 			}
@@ -49,14 +79,39 @@
 			&-destructive {
 				.oo-ui-tool-link {
 					border: 1px solid currentColor;
+					color: var(--theme-alert-color);
 
 					&:hover,
 					&:active,
 					&:focus {
 						background-color: transparent;
+						color: var(--theme-alert-color--hover);
+					}
+				}
+
+				&.oo-ui-flaggedElement-primary {
+					.oo-ui-tool-link {
+						background-color: @wds-color-alert;
+						border-color: @wds-color-alert;
+						color: @wds-color-white;
+
+						&:hover,
+						&:active,
+						&:focus {
+							@hover-color: darken(@wds-color-alert, 20%);
+
+							background-color: @hover-color;
+							border-color: @hover-color;
+						}
 					}
 				}
 			}
+		}
+
+		&.oo-ui-tool-active .oo-ui-tool-link {
+			// active
+			background-color: var(--theme-link-color--fadeout);
+			color: var(--theme-link-color);
 		}
 	}
 
@@ -83,8 +138,7 @@
 	}
 
 	&:not(:last-child) {
-		border-right-style: @border-style-base;
-		border-right-width: @border-width-base;
+		border-right: solid 1px var(--theme-article-text-mix-50);
 	}
 
 	.oo-ui-toolGroup {
@@ -92,6 +146,7 @@
 	}
 
 	.oo-ui-toolbar-actions & {
+		border-left-color: var(--theme-article-text-mix-50);
 		border-right: 0;
 		padding: 0 1px;
 
@@ -110,6 +165,20 @@
 }
 
 .theme-oo-ui-listToolGroup() {
+	&-tools .oo-ui-tool {
+		&.oo-ui-widget-enabled {
+			&:hover .oo-ui-tool-link {
+				background-color: var(--theme-link-color--fadeout);
+				color: var(--theme-link-color);
+			}
+
+			&.oo-ui-tool-active .oo-ui-tool-link {
+				// active
+				background-color: var(--theme-link-color--fadeout);
+				color: var(--theme-link-color);
+			}
+		}
+	}
 }
 
 .theme-oo-ui-menuToolGroup() {
@@ -119,21 +188,23 @@
 	.flex-button(~'.oo-ui-popupToolGroup-handle', @tool-vertical-padding, @tool-horizontal-padding, @tool-horizontal-gap);
 
 	.oo-ui-popupToolGroup-handle {
-		border-radius: @border-radius-base;
+		border-radius: @wds-rounded-corner-radius;
 
 		> .oo-ui-indicatorElement-indicator {
-			.oo-ui-transition(transform @transition-base);
+			.oo-ui-transition(transform @wds-button-transition-duration);
 		}
 	}
 
 	&-header {
-		font-weight: @font-weight-bold;
+		color: var(--theme-article-text-color--secondary);
+		font-weight: @wds-font-weight-bold;
 	}
 
 	&-tools {
-		border-radius: @border-radius-base;
-		border-style: solid;
-		border-width: 1px;
+		background-color: var(--theme-article-background-color--secondary);
+		border: 1px solid var(--theme-border-color);
+		border-radius: @wds-rounded-corner-radius;
+		box-shadow: var(--theme-box-shadow);
 		min-width: 16em;
 
 		&.oo-ui-popupToolGroup-active-tools {
@@ -147,10 +218,10 @@
 		.oo-ui-tool-link {
 			border-radius: 0;
 			display: flex;
-			font-size: @font-size-base;
+			font-size: @wds-font-size-s;
 			font-weight: @wds-font-weight-normal;
 			justify-content: space-between;
-			line-height: @line-height-none;
+			line-height: @wds-line-height-none;
 			padding: 9px 7px;
 			text-transform: none;
 			width: auto;
@@ -159,8 +230,8 @@
 				align-self: end;
 				display: initial;
 				flex-grow: 1;
-				font-size: @font-size-tiny;
-				line-height: @line-height-base;
+				font-size: @wds-font-size-xxs;
+				line-height: @wds-line-height-normal;
 
 				&:not(:empty) {
 					// Push away from tool's title
@@ -172,7 +243,12 @@
 
 	&.oo-ui-widget-enabled {
 		> .oo-ui-popupToolGroup-handle {
-			.oo-ui-transition(background-color @transition-base, color @transition-base);
+			.oo-ui-transition(background-color @wds-button-transition-duration, color @wds-button-transition-duration);
+
+			&:hover,
+			&:focus {
+				background-color: var(--theme-link-color--fadeout);
+			}
 		}
 	}
 
@@ -185,7 +261,16 @@
 		outline: 0;
 	}
 
-	&-active > .oo-ui-popupToolGroup-handle > .oo-ui-indicator-down {
-		transform: rotate(180deg);
+	&-active > .oo-ui-popupToolGroup-handle {
+		&,
+		&:hover {
+			// active
+			background-color: var(--theme-link-color--fadeout);
+			color: var(--theme-link-color);
+		}
+
+		> .oo-ui-indicator-down {
+			transform: rotate(180deg);
+		}
 	}
 }

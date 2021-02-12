@@ -6,7 +6,7 @@
 .theme-oo-ui-bookletLayout() {
 	&-stackLayout {
 		> .oo-ui-panelLayout {
-			padding: @dialog-padding;
+			padding: @wds-dialog-padding;
 		}
 	}
 
@@ -14,8 +14,8 @@
 		padding: @wds-dropdown-padding - @wds-list-item-vertical-padding 0;
 
 		> .oo-ui-outlineControlsWidget {
-			border-top-style: @border-style-base;
-			border-top-width: @border-width-base;
+			border-top-style: solid;
+			border-top-width: 1px;
 		}
 
 		.oo-ui-outlineOptionWidget {
@@ -25,15 +25,14 @@
 	}
 
 	> .oo-ui-menuLayout-menu {
-		border-right-style: @border-style-base;
-		border-right-width: @border-width-base;
+		border-right: 1px solid var(--theme-border-color);
 	}
 }
 
 .theme-oo-ui-indexLayout() {
 	&-stackLayout {
 		> .oo-ui-panelLayout {
-			padding: @dialog-padding;
+			padding: @wds-dialog-padding;
 		}
 	}
 
@@ -137,6 +136,22 @@
 		max-width: @max-width-base;
 		padding: @padding-vertical-label 0;
 
+		&-alert {
+			color: var(--theme-alert-color);
+		}
+
+		&-warning {
+			color: var(--theme-warning-color);
+		}
+
+		&-success {
+			color: var(--theme-success-color);
+		}
+
+		&-notice {
+			color: var(--theme-message-color);
+		}
+
 		> .oo-ui-messageWidget {
 			margin-left: 12px;
 			margin-right: 12px;
@@ -180,8 +195,8 @@
 
 	.oo-ui-actionFieldLayout-button {
 		.oo-ui-buttonElement-framed > .oo-ui-buttonElement-button {
-			border-radius: 0 @border-radius-base @border-radius-base 0;
-			margin-left: -@border-width-base;
+			border-radius: 0 @wds-rounded-corner-radius @wds-rounded-corner-radius 0;
+			margin-left: -1px;
 		}
 
 		.oo-ui-buttonElement-frameless {
@@ -226,8 +241,8 @@
 	}
 
 	&.oo-ui-labelElement > .oo-ui-fieldsetLayout-header > .oo-ui-labelElement-label {
-		font-size: @font-size-big;
-		font-weight: @font-weight-bold;
+		font-size: @wds-font-size-base;
+		font-weight: @wds-font-weight-bold;
 	}
 
 	&.oo-ui-iconElement > .oo-ui-fieldsetLayout-header > .oo-ui-iconElement-icon {
@@ -249,7 +264,7 @@
 
 		.oo-ui-buttonElement-button {
 			padding-right: 0; // Accessible label causes triggering of `.oo-ui-labelElement`, we need to reset it here
-			padding-top: @size-icon;
+			padding-top: @wds-icon-small-size;
 
 			&:hover,
 			&:active {
@@ -271,7 +286,7 @@
 
 .theme-oo-ui-panelLayout() {
 	&-padded {
-		padding: @dialog-padding;
+		padding: @wds-dialog-padding;
 
 		&.oo-ui-formLayout > .oo-ui-fieldsetLayout {
 			.oo-ui-labelElement-label,
@@ -282,9 +297,8 @@
 	}
 
 	&-framed {
-		border-radius: @border-radius-base;
-		border-style: @border-style-base;
-		border-width: @border-width-base;
+		border-radius: @wds-rounded-corner-radius;
+		border: 1px solid var(--theme-border-color);
 	}
 
 	&-padded&-framed {

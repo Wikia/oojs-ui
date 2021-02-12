@@ -1,16 +1,16 @@
-.flex-button( @parent-selector, @v-padding: @padding-vertical-base, @h-padding: @padding-horizontal-base, @h-gap: @gap-base ) {
+.flex-button( @parent-selector, @v-padding: @wds-button-vertical-padding, @h-padding: @wds-button-horizontal-padding, @h-gap: @gap-base ) {
 	@{parent-selector} {
 		align-items: center;
 		display: inline-flex;
-		font-size: @font-size-small;
-		font-weight: @font-weight-bold;
+		font-size: @wds-font-size-xs;
+		font-weight: @wds-font-weight-bold;
 		justify-content: center;
 		letter-spacing: 0.15px;
-		line-height: @line-height-base;
+		line-height: @wds-line-height-normal;
 		padding: @v-padding @h-padding - @h-gap / 2;
 		text-decoration: none;
 		text-transform: uppercase;
-		.oo-ui-transition(background-color @transition-base, color @transition-base, border-color @transition-base);
+		.oo-ui-transition(background-color @wds-button-transition-duration, color @wds-button-transition-duration, border-color @wds-button-transition-duration);
 
 		&:focus {
 			outline: 0;
