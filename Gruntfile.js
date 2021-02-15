@@ -275,17 +275,6 @@ module.exports = function ( grunt ) {
 					'demos/styles/demo.rtl.css': 'demos/styles/demo.rtl.css',
 				},
 			},
-			theming: {
-				options: {
-					banner: '',
-				},
-				files: {
-					'dist/themes/fandom/theming/colors.scss': [
-						'src/themes/fandom/functions/fadeout.scss',
-						'dist/themes/fandom/theming/colors.scss',
-					],
-				},
-			},
 		},
 
 		// Build – Code
@@ -486,34 +475,6 @@ module.exports = function ( grunt ) {
 						},
 					},
 				],
-			},
-		},
-
-		lessToSass: {
-			theming: {
-				files: [
-					{
-						expand: true,
-						cwd: 'src/themes/fandom/theming',
-						src: ['*.less'],
-						ext: '.scss',
-						dest: 'dist/themes/fandom/theming',
-					},
-				],
-				options: {
-					replacements: [
-						// removes boolean function usages, which are not needed in sass
-						{
-							pattern: /(\$[\w\-]*:\s*)boolean\((.*)\)/gi,
-							replacement: '$1$2',
-						},
-						// wraps css custom properties values with #{...} (sass interpolation)
-						{
-							pattern: /([^\w]--[\w-]+:\s)(.*);/gi,
-							replacement: '$1#{$2};',
-						},
-					],
-				},
 			},
 		},
 
@@ -787,13 +748,11 @@ module.exports = function ( grunt ) {
 	] );
 	grunt.registerTask( 'build-i18n', [ 'copy:i18n' ] );
 	grunt.registerTask( 'build-tests', [ 'exec:rubyTestSuiteGenerator', 'exec:phpGenerateJSPHPForKarma' ] );
-	grunt.registerTask( 'fandom-theming', [ 'lessToSass:theming', 'concat:theming' ] );
 	grunt.registerTask( 'build', [
 		'clean:build', 'fileExists', 'tyops', 'build-code', 'build-styling', 'build-i18n',
 		'concat:omnibus',
 		'copy:dist',
 		// 'copy:wikimediauibasevars',
-		'fandom-theming',
 		'clean:tmp'
 	] );
 
@@ -811,7 +770,6 @@ module.exports = function ( grunt ) {
 		'build-code',
 		'colorizeSvg', 'set-graphics:vector', 'less', 'concat:css',
 		'copy:imagesCommon', 'copy:imagesThemes',
-		'fandom-theming',
 		'build-i18n', 'concat:omnibus', 'copy:demos', 'copy:fastcomposerdemos',
 		'note-quick-build'
 	] );
