@@ -326,7 +326,8 @@
 	&-modal&-floating > .oo-ui-dialog > .oo-ui-window-frame {
 		border-radius: @border-radius-base;
 		bottom: 1em;
-		max-height: e('calc( 100% - 2em )');
+		// Ensure dialogs don't overlap with static site elements such as the global nav
+		max-height: e('calc( 100% - 8em )');
 		top: 1em;
 	}
 }
