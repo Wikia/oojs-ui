@@ -1,0 +1,148 @@
+@mixin theming-tools($toolbar-background-color, $toolbar-text-color, $toolbar-border-color, $tool-accent-color, $tool-accent-color--fadeout, $tool-accent-color--hover, $tool-accent-color--active){
+	.oo-ui-toolbar {
+		&-bar {
+			background-color: $toolbar-background-color;
+			border-color: $toolbar-border-color;
+			color: $toolbar-text-color;
+		}
+	}
+
+	.oo-ui-tool {
+		.oo-ui-tool-link {
+			&:hover,
+			&:focus {
+				background-color: $tool-accent-color--fadeout;
+			}
+
+			&:active,
+			&:active:hover {
+				background-color: $tool-accent-color--active;
+				color: $tool-accent-color;
+			}
+		}
+
+		&.oo-ui-widget-enabled {
+			&.oo-ui-flaggedElement {
+				&-progressive {
+					.oo-ui-tool-link {
+						color: $tool-accent-color;
+
+						&:hover,
+						&:active,
+						&:focus {
+							color: $tool-accent-color--hover;
+						}
+					}
+				}
+
+				&-destructive {
+					.oo-ui-tool-link {
+						color: $themed-alert-color;
+
+						&:hover,
+						&:active,
+						&:focus {
+							color: $themed-alert-color--hover;
+						}
+					}
+				}
+			}
+
+			&.oo-ui-flaggedElement-primary {
+				&.oo-ui-flaggedElement {
+					&-progressive {
+						.oo-ui-tool-link {
+							background-color: $themed-button-background;
+							border-color: $themed-button-background;
+							color: $themed-button-label;
+
+							&:hover,
+							&:active,
+							&:focus {
+								background-color: $themed-button-background--hover;
+								border-color: $themed-button-background--hover;
+							}
+						}
+					}
+
+					&-destructive {
+						.oo-ui-tool-link {
+							background-color: $wds-color-alert;
+							border-color: $wds-color-alert;
+							color: $wds-color-white;
+
+							&:hover,
+							&:active,
+							&:focus {
+								$hover-color: darken($wds-color-alert, 20%) !default;
+
+								background-color: $hover-color;
+								border-color: $hover-color;
+							}
+						}
+					}
+				}
+			}
+
+			&.oo-ui-tool-active .oo-ui-tool-link {
+				background-color: $tool-accent-color--active;
+				color: $tool-accent-color;
+			}
+		}
+	}
+
+	.oo-ui-toolGroup {
+		border-right-color: $toolbar-separator-color;
+
+		.oo-ui-toolbar-actions & {
+			border-left-color: $toolbar-separator-color;
+		}
+	}
+
+	.oo-ui-listToolGroup {
+		&-tools .oo-ui-tool {
+			&.oo-ui-widget-enabled {
+				&:hover .oo-ui-tool-link {
+					background-color: $tool-accent-color--fadeout;
+					color: $tool-accent-color;
+				}
+
+				&.oo-ui-tool-active .oo-ui-tool-link {
+					background-color: $tool-accent-color--active;
+					color: $tool-accent-color;
+				}
+			}
+		}
+	}
+
+	.oo-ui-popupToolGroup {
+		&-header {
+			color: $themed-text-color--secondary;
+		}
+
+		&-tools {
+			background-color: $themed-page-background--windows;
+			border-color: $themed-border-color;
+			box-shadow: $themed-window-box-shadow;
+		}
+
+		&.oo-ui-widget-enabled {
+			> .oo-ui-popupToolGroup-handle {
+				&:hover,
+				&:focus {
+					background-color: $tool-accent-color--fadeout;
+				}
+			}
+		}
+
+		&.oo-ui-popupToolGroup-active {
+			> .oo-ui-popupToolGroup-handle {
+				&,
+				&:hover {
+					background-color: $tool-accent-color--active;
+					color: $tool-accent-color;
+				}
+			}
+		}
+	}
+}

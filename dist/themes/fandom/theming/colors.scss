@@ -1,0 +1,88 @@
+@function fadeout($color, $value) {
+	@return fade_out($color, $value / 100%);
+}
+
+// to work, this file needs to have these variables defined before it's imported
+//   $color-page, $color-buttons, $color-links
+//   $themed-button-label, $themed-link-label
+//   $themed-alert-color, $themed-warning-color, $themed-success-color, $themed-notice-color
+//   $color-page-luma, $color-buttons-luma, $color-links-luma, $color-alert-luma
+
+// These thresholds are calculated for specific light and dark text colors and should be recalculated
+// if the colors change. At these thresholds we recognize background color as dark or light.
+// see: https://github.com/Wikia/unified-platform/blob/728d64c6e6a66485da4e1fa0ae0a4e6bdfe85cf1/extensions/fandom/FandomIncludes/src/Util/SassUtil.php#L557
+// see: https://wikia-inc.atlassian.net/wiki/spaces/XW/pages/1175420933/Theming+colors+in+UCP
+// Do not split these definitions into multiple lines - lessToSass converter adds `!default` modifier only to one-liners
+
+// Standard luma threshold - for white (#ffffff) and dark (#000000) foreground color
+$luma-threshold--standard: 17.91% !default;
+
+// Luma threshold for color-page (as background color) and for text-color--light (#e6e6e6) and text-color--dark (#3a3a3a)
+$luma-threshold--page: 22.86% !default;
+
+// Luma threshold for very light background colors
+$luma-threshold--page--very-light: 90% !default;
+
+// Luma threshold for color-buttons (as background color) and for button-label--light (#ffffff) and button-label--dark (#0e191a)
+$luma-threshold--buttons: 19.8% !default;
+
+// Base colors
+$themed-page-background: $color-page !default;
+$themed-button-background: $color-buttons !default;
+$themed-link-color: $color-links !default;
+
+// Special colors variations
+$themed-alert-color--fadeout: fadeout($themed-alert-color, 85%) !default;
+
+
+/* prettier-ignore */
+$themed-alert-color--hover: if($color-alert-luma < $luma-threshold--standard, lighten($themed-alert-color, 20%), darken($themed-alert-color, 20%)) !default;
+
+// Boolean variables
+$is-dark-theme: $color-page-luma < $luma-threshold--page !default;
+$is-very-light-theme: $color-page-luma > $luma-threshold--page--very-light !default;
+$is-dark-button: $color-buttons-luma < $luma-threshold--buttons !default;
+$is-dark-link: $color-links-luma < $luma-threshold--standard !default;
+
+$white: #fff !default;
+$black: #000 !default;
+$text-color--light: $wds-fandom-color-text-light !default;
+$text-color--dark: $wds-fandom-color-text-dark !default;
+$button-label--light: $white !default;
+$button-label--dark: $wds-fandom-color-black !default;
+
+// Background colors
+
+/* prettier-ignore */
+$themed-page-background--secondary: if($is-dark-theme, mix($themed-page-background, $white, 85%), mix($themed-page-background, $black, 95%)) !default;
+$themed-page-background--windows: if($is-very-light-theme, $white, $themed-page-background--secondary) !default;
+
+// Text colors
+$themed-text-color: if($is-dark-theme, $text-color--light, $text-color--dark) !default;
+$themed-text-color--hover: if($is-dark-theme, darken($themed-text-color, 20%), lighten($themed-text-color, 20%)) !default;
+$themed-text-color--secondary: fadeout($themed-text-color, 40%) !default;
+
+// Link colors
+$themed-link-color--hover: if($is-dark-link, lighten($themed-link-color, 20%), darken($themed-link-color, 20%)) !default;
+$themed-link-color--fadeout: fadeout($themed-link-color, 85%) !default;
+
+/* prettier-ignore */
+$themed-link-color--active: if(lightness($themed-link-color) < 50%, lighten($themed-link-color--fadeout, 20%), darken($themed-link-color--fadeout, 20%)) !default;
+
+// Button colors
+
+/* prettier-ignore */
+$themed-button-background--hover: if($is-dark-button, lighten($themed-button-background, 20%), darken($themed-button-background, 20%)) !default;
+
+// Border colors
+
+/* prettier-ignore */
+$themed-border-color: if($is-dark-theme, mix($themed-page-background, $white, 50%), mix($themed-page-background, $black, 75%)) !default;
+
+// Other colors
+$themed-overlay-color: if($is-dark-theme, rgba($white, 0.5), rgba($black, 0.5)) !default;
+$themed-window-box-shadow: 0 3px 12px 0 rgba($black, 0.3) !default;
+
+// Toolbar colors
+$toolbar-text-color: if($is-dark-theme, $white, $wds-fandom-color-black) !default;
+$toolbar-separator-color: mix($themed-page-background, if($is-dark-theme, $white, $black), 50%) !default;

@@ -1,0 +1,44 @@
+/*!
+ * OOUI v0.19.0---base-0.35.1
+ * https://www.mediawiki.org/wiki/OOUI
+ *
+ * Copyright 2011–2021 OOUI Team and other contributors.
+ * Released under the MIT license
+ * http://oojs.mit-license.org
+ *
+ * Date: 2021-02-23T17:25:30Z
+ */
+.oo-ui-icon-arrowNext,
+.oo-ui-icon-upTriangle,
+.oo-ui-icon-collapse {
+  transform: rotate(180deg);
+}
+.oo-ui-icon-ellipsis {
+  transform: rotate(90deg);
+}
+.oo-ui-icon-redo {
+  transform: scaleX(-1);
+}
+.oo-ui-indicator-up {
+  transform: rotate(180deg);
+}
+.oo-ui-icon-userAnonymous {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/userAnonymous.svg');
+  mask-image: url('themes/wikimediaui/images/icons/userAnonymous.svg');
+}
+.oo-ui-icon-userAvatar {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/userAvatar.svg');
+  mask-image: url('themes/wikimediaui/images/icons/userAvatar.svg');
+}
+.oo-ui-icon-userAvatarOutline {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/userAvatarOutline.svg');
+  mask-image: url('themes/wikimediaui/images/icons/userAvatarOutline.svg');
+}
+.oo-ui-icon-userGroup {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/userGroup-ltr.svg');
+  mask-image: url('themes/wikimediaui/images/icons/userGroup-ltr.svg');
+}
+.oo-ui-icon-userTalk {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/userTalk-ltr.svg');
+  mask-image: url('themes/wikimediaui/images/icons/userTalk-ltr.svg');
+}

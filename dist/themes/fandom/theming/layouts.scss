@@ -1,0 +1,32 @@
+@mixin theming-layouts(){
+	.oo-ui-panelLayout {
+		&-framed {
+			border-color: $themed-border-color;
+		}
+	}
+
+	// B/C for legacy FieldLayout notices
+	.oo-ui-fieldLayout-messages {
+		&-alert {
+			color: $themed-alert-color;
+		}
+
+		&-warning {
+			color: $themed-warning-color;
+		}
+
+		&-success {
+			color: $themed-success-color;
+		}
+
+		&-notice {
+			color: $themed-notice-color;
+		}
+	}
+
+	.oo-ui-bookletLayout {
+		> .oo-ui-menuLayout-menu {
+			border-right-color: $themed-border-color;
+		}
+	}
+}

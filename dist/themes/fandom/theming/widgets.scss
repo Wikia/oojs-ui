@@ -1,0 +1,536 @@
+@mixin theming-button-widgets(){
+	.oo-ui-buttonGroupWidget {
+		.oo-ui-buttonElement-framed {
+			&.oo-ui-widget-disabled + .oo-ui-widget-disabled {
+				> .oo-ui-buttonElement-button {
+					border-left-color: rgba($themed-border-color, 0.5);
+				}
+			}
+		}
+
+		&.oo-ui-widget-enabled {
+			.oo-ui-buttonElement {
+				&.oo-ui-toggleWidget-on + .oo-ui-toggleWidget-on {
+					> .oo-ui-buttonElement-button,
+					> .oo-ui-buttonElement-button:active {
+						border-left-color: $themed-border-color;
+					}
+				}
+			}
+		}
+	}
+
+	.oo-ui-buttonSelectWidget {
+		.oo-ui-buttonOptionWidget {
+			&.oo-ui-widget-disabled + .oo-ui-widget-disabled {
+				> .oo-ui-buttonElement-button {
+					border-left-color: rgba($themed-border-color, 0.5);
+				}
+			}
+		}
+	}
+}
+
+@mixin theming-checkboxes($off-color, $on-color){
+	.oo-ui-checkboxInputWidget {
+		color: $on-color;
+
+		[type='checkbox'] {
+			+ span,
+			&:indeterminate + span::before,
+			&:disabled + span,
+			&:checked:disabled + span,
+			&:checked:disabled + span::before {
+				border-color: $off-color;
+			}
+		}
+
+		&.oo-ui-widget-enabled [type='checkbox'] {
+			&:focus + span,
+			&:hover + span {
+				border-color: currentColor;
+			}
+
+			&:active + span {
+				background-color: currentColor;
+				border-color: currentColor;
+			}
+
+			&:checked,
+			&:indeterminate {
+				& + span,
+				&:focus + span,
+				&:active + span {
+					border-color: currentColor;
+
+					&::before {
+						border-color: currentColor;
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin theming-dropdowns($accent-color){
+	.oo-ui-dropdownWidget-handle,
+	.oo-ui-dropdownInputWidget select {
+		background-color: $themed-page-background--secondary;
+		border-color: $themed-border-color;
+	}
+
+	.oo-ui-dropdownWidget-handle.oo-ui-widget-enabled &-handle,
+	.oo-ui-dropdownInputWidget.oo-ui-widget-enabled select {
+		&:hover,
+		&:focus,
+		&:active {
+			border-color: $accent-color;
+		}
+
+		&:active {
+			@include active-box-shadow($accent-color);
+		}
+	}
+
+	.oo-ui-dropdownInputWidget select optgroup {
+		color: initial;
+
+		option {
+			color: $themed-text-color;
+		}
+	}
+}
+
+@mixin theming-menuOptions($accent-color, $accent-color--fadeout, $accent-color--active){
+	.oo-ui-menuOptionWidget {
+		&.oo-ui-optionWidget {
+			&-highlighted {
+				background-color: $accent-color--fadeout;
+				color: $accent-color;
+			}
+
+			&-selected {
+				background-color: $accent-color--active;
+				color: $accent-color;
+			}
+		}
+	}
+
+	.oo-ui-menuSelectWidget {
+		background-color: $themed-page-background--windows;
+		border: $themed-border-color;
+		box-shadow: $themed-window-box-shadow;
+	}
+}
+
+@mixin theming-outlineControls($accent-color, $accent-color--fadeout, $accent-color--active){
+	.oo-ui-outlineControlsWidget {
+		background-color: $themed-page-background--secondary;
+	}
+
+	.oo-ui-outlineOptionWidget {
+		&.oo-ui-optionWidget-highlighted {
+			background-color: $accent-color--fadeout;
+			color: $accent-color;
+		}
+
+		&.oo-ui-optionWidget-selected,
+		&.oo-ui-optionWidget-pressed {
+			background-color: $accent-color--active;
+			color: $accent-color;
+		}
+	}
+}
+
+@mixin theming-popups(){
+	$popup-background-color: $themed-page-background--windows !default;
+	$popup-border-color: $themed-border-color !default;
+
+	.oo-ui-popupWidget {
+		&-popup {
+			background-color: $popup-background-color;
+			border: $popup-border-color;
+			color: $themed-text-color;
+			filter: drop-shadow(0 2px 1px rgba($black, 0.3));
+		}
+
+		&-anchored.oo-ui-popupWidget {
+			&-anchored-top {
+				.oo-ui-popupWidget-anchor {
+					&::before {
+						border-bottom-color: $popup-border-color;
+					}
+
+					&::after {
+						border-bottom-color: $popup-background-color;
+					}
+				}
+			}
+
+			&-anchored-bottom {
+				.oo-ui-popupWidget-anchor {
+					&::before {
+						border-top-color: $themed-border-color;
+					}
+
+					&::after {
+						border-top-color: $popup-background-color;
+					}
+				}
+			}
+
+			&-anchored-start {
+				.oo-ui-popupWidget-anchor {
+					&::before {
+						border-right-color: $themed-border-color;
+					}
+
+					&::after {
+						border-right-color: $popup-background-color;
+					}
+				}
+			}
+
+			&-anchored-end {
+				.oo-ui-popupWidget-anchor {
+					&::before {
+						border-left-color: $themed-border-color;
+					}
+
+					&::after {
+						border-left-color: $popup-background-color;
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin theming-progressBars($accent-color){
+	.oo-ui-progressBarWidget {
+		background-color: $themed-page-background--secondary;
+		border-color: $themed-border-color;
+
+		&.oo-ui-widget-enabled {
+			.oo-ui-progressBarWidget-bar {
+				background-color: $accent-color;
+			}
+		}
+
+		&.oo-ui-widget-disabled {
+			.oo-ui-progressBarWidget-bar {
+				background-color: $themed-overlay-color;
+			}
+		}
+	}
+}
+
+@mixin theming-radios($off-color, $on-color){
+	.oo-ui-radioInputWidget {
+		[type='radio'] {
+			+ span,
+			&:disabled + span,
+			&:checked:disabled + span {
+				color: $off-color;
+
+				&::before {
+					background-color: currentColor;
+				}
+			}
+		}
+
+		&.oo-ui-widget-enabled [type='radio'] {
+			&:hover + span,
+			&:checked + span {
+				color: $on-color;
+			}
+		}
+	}
+}
+
+@mixin theming-fileSelects($accent-color, $accent-color--fadeout){
+	.oo-ui-selectFileWidget {
+		&-dropTarget {
+			background-color: $themed-page-background--secondary;
+			border-color: $themed-border-color;
+		}
+
+		&.oo-ui-widget-enabled {
+			&.oo-ui-selectFileWidget-dropTarget {
+				&:hover {
+					border-color: $accent-color;
+				}
+			}
+
+			&.oo-ui-selectFileWidget-canDrop {
+				&.oo-ui-selectFileWidget-dropTarget,
+				.oo-ui-selectFileInputWidget-info > .oo-ui-inputWidget-input {
+					background-color: $accent-color--fadeout;
+					color: $accent-color;
+				}
+			}
+		}
+	}
+}
+
+@mixin theming-tabs($accent-color, $accent-color--text){
+	.oo-ui-tabSelectWidget {
+		&-framed {
+			background-color: transparent;
+			border-bottom-color: $accent-color;
+		}
+	}
+
+	.oo-ui-tabOptionWidget {
+		.oo-ui-tabSelectWidget-framed & {
+			background-color: $themed-page-background--secondary;
+			color: $themed-text-color;
+
+			&.oo-ui-optionWidget-selected {
+				background-color: $accent-color;
+				color: $accent-color--text;
+			}
+
+			&.oo-ui-widget-enabled {
+				&:not(.oo-ui-optionWidget-selected):hover {
+					color: $accent-color;
+				}
+			}
+		}
+
+		.oo-ui-tabSelectWidget-frameless &,
+		.oo-ui-tabSelectWidget:not(.oo-ui-tabSelectWidget-framed) & {
+			border-bottom-color: $themed-border-color;
+
+			&.oo-ui-optionWidget-selected,
+			&.oo-ui-widget-enabled:active {
+				box-shadow: inset 0 -2px 0 0 $accent-color;
+				color: $accent-color;
+			}
+
+			&.oo-ui-widget-enabled:hover {
+				color: $accent-color;
+			}
+		}
+	}
+}
+
+@mixin theming-tags($accent-color, $accent-color--fadeout){
+	.oo-ui-tagItemWidget {
+		color: $themed-text-color;
+
+		.oo-ui-buttonElement-button {
+			color: inherit;
+
+			&:hover {
+				color: $accent-color;
+			}
+		}
+
+		&.oo-ui-widget-enabled {
+			background-color: transparent;
+
+			&:hover,
+			&:focus {
+				background-color: $accent-color--fadeout;
+				border-color: currentColor;
+				color: $accent-color;
+
+				.oo-ui-buttonElement-button {
+					color: $accent-color;
+				}
+			}
+
+			&.oo-ui-flaggedElement-invalid {
+				background-color: $themed-alert-color--fadeout;
+				color: $themed-alert-color;
+
+				&:hover,
+				&:focus {
+					color: $themed-alert-color--hover;
+				}
+			}
+		}
+	}
+
+	.oo-ui-tagMultiselectWidget {
+		&-handle {
+			border-color: $themed-border-color;
+
+			> .oo-ui-tagMultiselectWidget-content > input {
+				@include themed-placeholder();
+			}
+		}
+
+		&.oo-ui-widget-enabled {
+			.oo-ui-tagMultiselectWidget-handle {
+				background-color: $themed-page-background--secondary;
+			}
+
+			&.oo-ui-tagMultiselectWidget-inlined {
+				&:hover .oo-ui-tagMultiselectWidget-handle {
+					border-color: $accent-color;
+				}
+
+				&.oo-ui-tagMultiselectWidget-focus .oo-ui-tagMultiselectWidget-handle {
+					border-color: $accent-color;
+					@include active-box-shadow($accent-color);
+				}
+
+				&.oo-ui-flaggedElement-invalid {
+					.oo-ui-tagMultiselectWidget-handle,
+					&:hover .oo-ui-tagMultiselectWidget-handle {
+						border-color: $themed-alert-color;
+					}
+				}
+			}
+
+			&.oo-ui-tagMultiselectWidget-outlined {
+				.oo-ui-tagMultiselectWidget-handle {
+					background-color: $themed-page-background--secondary;
+				}
+
+				&.oo-ui-flaggedElement-invalid .oo-ui-inputWidget-input {
+					border-color: $themed-alert-color;
+				}
+			}
+
+			&.oo-ui-flaggedElement-invalid .oo-ui-inputWidget-input {
+				color: $themed-alert-color;
+			}
+		}
+
+		.oo-ui-inputWidget-input {
+			color: inherit;
+		}
+	}
+}
+
+@mixin theming-toggles($off--back-color, $off--front-color, $on--back-color, $on--front-color){
+	.oo-ui-toggleSwitchWidget {
+		background-color: $off--back-color;
+		box-shadow: 0 2px 2px 0 rgba(#000, 0.24), 0 0 2px 0 rgba(#000, 0.12);
+
+		&-grip {
+			background-color: $off--front-color;
+		}
+
+		&.oo-ui-toggleWidget-on {
+			background-color: $on--back-color;
+
+			.oo-ui-toggleSwitchWidget-grip {
+				background-color: $on--front-color;
+			}
+		}
+	}
+}
+
+@mixin theming-inputs($accent-color, $accent-color--fadeout){
+	.oo-ui-textInputWidget {
+		.oo-ui-inputWidget-input {
+			background-color: transparent;
+			border-color: $themed-border-color;
+			color: $themed-text-color;
+		}
+
+		&.oo-ui-widget-enabled {
+			.oo-ui-inputWidget-input {
+				@include active-box-shadow(transparent);
+				@include themed-placeholder();
+
+				&:hover,
+				&:focus {
+					border-color: $accent-color;
+				}
+
+				&:focus {
+					@include active-box-shadow($accent-color);
+				}
+
+				&[readonly] {
+					&:hover,
+					&:focus {
+						border-color: $themed-border-color;
+					}
+				}
+			}
+
+			&.oo-ui-flaggedElement-invalid {
+				.oo-ui-inputWidget-input {
+					border-color: $themed-alert-color;
+
+					&:hover,
+					&:focus {
+						border-color: $themed-alert-color;
+					}
+
+					&:focus {
+						@include active-box-shadow($themed-alert-color);
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin theming-messages($background-color, $text-color){
+	.oo-ui-messageWidget {
+		&.oo-ui-messageWidget-block {
+			box-shadow: 0 2px 6px 0 rgba($black, 0.2);
+
+			> .oo-ui-iconElement-icon {
+				color: $white;
+			}
+
+			> .oo-ui-labelElement-label {
+				background-color: $background-color;
+				color: $text-color;
+			}
+
+			&.oo-ui-flaggedElement-error {
+				background-color: $themed-alert-color;
+			}
+
+			&.oo-ui-flaggedElement-warning {
+				background-color: $themed-warning-color;
+			}
+
+			&.oo-ui-flaggedElement-success {
+				background-color: $themed-success-color;
+			}
+
+			&.oo-ui-flaggedElement-notice {
+				background-color: $themed-notice-color;
+			}
+		}
+
+		&:not(.oo-ui-messageWidget-block) {
+			&.oo-ui-flaggedElement-error {
+				color: $themed-alert-color;
+			}
+
+			&.oo-ui-flaggedElement-warning {
+				color: $themed-warning-color;
+			}
+
+			&.oo-ui-flaggedElement-success {
+				color: $themed-success-color;
+			}
+
+			&.oo-ui-flaggedElement-notice {
+				color: $themed-notice-color;
+			}
+		}
+	}
+}
+
+@mixin active-box-shadow($color){
+	box-shadow: inset 0 0 0 1px $color;
+}
+
+@mixin themed-placeholder(){
+	&::placeholder {
+		color: $themed-text-color;
+		opacity: 0.4;
+	}
+}

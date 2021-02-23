@@ -1,0 +1,19 @@
+{
+	"selectorWithoutVariant": ".oo-ui-indicator-{name}",
+	"selectorWithVariant": ".oo-ui-image-{variant}.oo-ui-indicator-{name}",
+	"intro": "@import '../../../../src/styles/common';",
+	"images": {
+		"clear": {
+			"file": "~design-system-svg/wds-icons-close-tiny.svg"
+		},
+		"up": {
+			"file": "~design-system-svg/wds-icons-dropdown-tiny.svg"
+		},
+		"down": {
+			"file": "~design-system-svg/wds-icons-dropdown-tiny.svg"
+		},
+		"required": {
+			"file": "../wikimediaui/images/indicators/required.svg"
+		}
+	}
+}

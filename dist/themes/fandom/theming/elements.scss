@@ -1,0 +1,121 @@
+@mixin theming-text-buttons($button-color, $button-color--hover){
+	.oo-ui-buttonElement {
+		&-frameless {
+			@include button-secondary($button-color, $button-color--hover);
+
+			&.oo-ui-flaggedElement {
+				&-progressive {
+					@include button-secondary($button-color, $button-color--hover);
+				}
+
+				&-destructive {
+					@include button-secondary($themed-alert-color, $themed-alert-color--hover);
+				}
+			}
+		}
+	}
+}
+
+@mixin theming-secondary-buttons($button-color, $button-color--hover){
+	.oo-ui-buttonElement {
+		&-framed:not(.oo-ui-flaggedElement-primary):not(.oo-ui-buttonElement-active) {
+			@include button-secondary($button-color, $button-color--hover);
+
+			&.oo-ui-flaggedElement,
+			&.oo-ui-widget-enabled.oo-ui-flaggedElement {
+				&-progressive {
+					@include button-secondary($button-color, $button-color--hover);
+				}
+
+				&-destructive {
+					@include button-secondary($themed-alert-color, $themed-alert-color--hover);
+				}
+			}
+		}
+	}
+}
+
+@mixin theming-primary-buttons($button-color, $button-color--hover, $button-color--text){
+	.oo-ui-buttonElement {
+		&-framed {
+			&.oo-ui-flaggedElement-primary,
+			&.oo-ui-widget-enabled.oo-ui-flaggedElement-primary {
+				&.oo-ui-flaggedElement {
+					&-progressive {
+						@include button-primary($button-color, $button-color--text, $button-color--hover);
+					}
+
+					&-destructive {
+						@include button-primary($wds-color-alert, $wds-color-white, darken($wds-color-alert, 20%));
+					}
+				}
+			}
+
+			&.oo-ui-widget-enabled.oo-ui-buttonElement-active {
+				@include button-primary($button-color, $button-color--text, $button-color);
+
+				&.oo-ui-flaggedElement {
+					&-progressive {
+						@include button-primary($button-color, $button-color--text, $button-color);
+					}
+
+					&-destructive {
+						@include button-primary($wds-color-alert, $wds-color-white, $wds-color-alert);
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin theming-pending(){
+	$first-color: $themed-page-background !default;
+	$second-color: $themed-page-background--secondary !default;
+
+	.oo-ui-pendingElement {
+		&-pending {
+			background-color: fadeout($first-color, 20%);
+			background-image: linear-gradient(
+				135deg,
+				$second-color 25%,
+				transparent 25%,
+				transparent 50%,
+				$second-color 50%,
+				$second-color 75%,
+				transparent 75%,
+				transparent
+			);
+		}
+	}
+}
+
+@mixin button-primary($background-color, $text-color, $background-color--hover){
+	> .oo-ui-buttonElement-button {
+		background-color: $background-color;
+		border-color: $background-color;
+		color: $text-color;
+	}
+
+	&.oo-ui-widget-enabled > .oo-ui-buttonElement-button {
+		&:focus,
+		&:hover,
+		&:active {
+			background-color: $background-color--hover;
+			border-color: $background-color--hover;
+		}
+	}
+}
+
+@mixin button-secondary($color, $color--hover){
+	> .oo-ui-buttonElement-button {
+		color: $color;
+	}
+
+	&.oo-ui-widget-enabled > .oo-ui-buttonElement-button {
+		&:hover,
+		&:active,
+		&:focus {
+			color: $color--hover;
+		}
+	}
+}

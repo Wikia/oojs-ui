@@ -1,0 +1,88 @@
+/*!
+ * OOUI v0.19.0---base-0.35.1
+ * https://www.mediawiki.org/wiki/OOUI
+ *
+ * Copyright 2011–2021 OOUI Team and other contributors.
+ * Released under the MIT license
+ * http://oojs.mit-license.org
+ *
+ * Date: 2021-02-23T17:25:30Z
+ */
+.oo-ui-icon-arrowNext,
+.oo-ui-icon-upTriangle,
+.oo-ui-icon-collapse {
+  transform: rotate(180deg);
+}
+.oo-ui-icon-ellipsis {
+  transform: rotate(90deg);
+}
+.oo-ui-icon-redo {
+  transform: scaleX(-1);
+}
+.oo-ui-indicator-up {
+  transform: rotate(180deg);
+}
+.oo-ui-icon-bookmarkOutline {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bookmarkOutline.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bookmarkOutline.svg');
+}
+.oo-ui-icon-bookmark {
+  -webkit-mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-bookmark-small.svg');
+  mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-bookmark-small.svg');
+}
+.oo-ui-icon-block {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/block.svg');
+  mask-image: url('themes/wikimediaui/images/icons/block.svg');
+}
+.oo-ui-icon-unBlock {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/unBlock.svg');
+  mask-image: url('themes/wikimediaui/images/icons/unBlock.svg');
+}
+.oo-ui-icon-flag {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/flag-rtl.svg');
+  mask-image: url('themes/wikimediaui/images/icons/flag-rtl.svg');
+}
+.oo-ui-icon-unFlag {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/unFlag-rtl.svg');
+  mask-image: url('themes/wikimediaui/images/icons/unFlag-rtl.svg');
+}
+.oo-ui-icon-lock {
+  -webkit-mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-lock-small.svg');
+  mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-lock-small.svg');
+}
+.oo-ui-icon-unLock {
+  -webkit-mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-unlock-small.svg');
+  mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-unlock-small.svg');
+}
+.oo-ui-icon-restore {
+  -webkit-mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-trash-open-small.svg');
+  mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-trash-open-small.svg');
+}
+.oo-ui-icon-star {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/star.svg');
+  mask-image: url('themes/wikimediaui/images/icons/star.svg');
+}
+.oo-ui-icon-halfStar {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/halfStar-rtl.svg');
+  mask-image: url('themes/wikimediaui/images/icons/halfStar-rtl.svg');
+}
+.oo-ui-icon-unStar {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/unStar.svg');
+  mask-image: url('themes/wikimediaui/images/icons/unStar.svg');
+}
+.oo-ui-icon-trash {
+  -webkit-mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-trash-small.svg');
+  mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-trash-small.svg');
+}
+.oo-ui-icon-unTrash {
+  -webkit-mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-trash-open-small.svg');
+  mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-trash-open-small.svg');
+}
+.oo-ui-icon-pushPin {
+  -webkit-mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-pin-small.svg');
+  mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-pin-small.svg');
+}
+.oo-ui-icon-ongoingConversation {
+  -webkit-mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-bubble-small.svg');
+  mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-bubble-small.svg');
+}

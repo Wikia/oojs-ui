@@ -1,0 +1,37 @@
+@import 'colors';
+@import 'elements';
+@import 'layouts';
+@import 'windows';
+@import 'tools';
+@import 'widgets';
+
+// elements
+@include theming-text-buttons($themed-text-color, $themed-text-color--hover);
+@include theming-secondary-buttons($themed-text-color, $themed-text-color--hover);
+@include theming-primary-buttons($themed-button-background, $themed-button-background--hover, $themed-button-label);
+@include theming-pending();
+
+// layouts
+@include theming-layouts();
+
+// windows
+@include theming-windows();
+
+// tools
+@include theming-tools($themed-page-background--secondary, $toolbar-text-color, $themed-border-color, $themed-link-color, $themed-link-color--fadeout, $themed-link-color--hover, $themed-link-color--active); // stylelint-disable-line
+
+// widgets
+@include theming-button-widgets();
+@include theming-checkboxes($themed-border-color, $themed-link-color);
+@include theming-dropdowns($themed-link-color);
+@include theming-menuOptions($themed-link-color, $themed-link-color--fadeout, $themed-link-color--active);
+@include theming-outlineControls($themed-link-color, $themed-link-color--fadeout, $themed-link-color--active);
+@include theming-popups();
+@include theming-progressBars($themed-link-color);
+@include theming-radios($themed-border-color, $themed-link-color);
+@include theming-fileSelects($themed-link-color, $themed-link-color--fadeout);
+@include theming-tabs($themed-link-color, $themed-link-label);
+@include theming-tags($themed-link-color, $themed-link-color--fadeout);
+@include theming-toggles(mix($themed-page-background, $themed-text-color, 50%), $white, mix($themed-page-background, $themed-link-color, 50%), $themed-link-color);  // stylelint-disable-line
+@include theming-inputs($themed-link-color, $themed-link-color--fadeout);
+@include theming-messages($white, $text-color--dark);

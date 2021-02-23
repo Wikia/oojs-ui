@@ -1,0 +1,48 @@
+/*!
+ * OOUI v0.19.0---base-0.35.1
+ * https://www.mediawiki.org/wiki/OOUI
+ *
+ * Copyright 2011–2021 OOUI Team and other contributors.
+ * Released under the MIT license
+ * http://oojs.mit-license.org
+ *
+ * Date: 2021-02-23T17:25:30Z
+ */
+.oo-ui-icon-arrowNext,
+.oo-ui-icon-upTriangle,
+.oo-ui-icon-collapse {
+  transform: rotate(180deg);
+}
+.oo-ui-icon-ellipsis {
+  transform: rotate(90deg);
+}
+.oo-ui-icon-redo {
+  transform: scaleX(-1);
+}
+.oo-ui-indicator-up {
+  transform: rotate(180deg);
+}
+.oo-ui-icon-menu {
+  -webkit-mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-menu-small.svg');
+  mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-menu-small.svg');
+}
+.oo-ui-icon-stripeFlow {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/stripeFlow-rtl.svg');
+  mask-image: url('themes/wikimediaui/images/icons/stripeFlow-rtl.svg');
+}
+.oo-ui-icon-stripeSummary {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/stripeSummary-rtl.svg');
+  mask-image: url('themes/wikimediaui/images/icons/stripeSummary-rtl.svg');
+}
+.oo-ui-icon-stripeToC {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/stripeToC-rtl.svg');
+  mask-image: url('themes/wikimediaui/images/icons/stripeToC-rtl.svg');
+}
+.oo-ui-icon-viewCompact {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/viewCompact.svg');
+  mask-image: url('themes/wikimediaui/images/icons/viewCompact.svg');
+}
+.oo-ui-icon-viewDetails {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/viewDetails-rtl.svg');
+  mask-image: url('themes/wikimediaui/images/icons/viewDetails-rtl.svg');
+}

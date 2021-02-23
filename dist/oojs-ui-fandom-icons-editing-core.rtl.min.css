@@ -1,0 +1,10 @@
+/*!
+ * OOUI v0.19.0---base-0.35.1
+ * https://www.mediawiki.org/wiki/OOUI
+ *
+ * Copyright 2011–2021 OOUI Team and other contributors.
+ * Released under the MIT license
+ * http://oojs.mit-license.org
+ *
+ * Date: 2021-02-23T17:25:30Z
+ */.oo-ui-icon-arrowNext,.oo-ui-icon-collapse,.oo-ui-icon-upTriangle{transform:rotate(180deg)}.oo-ui-icon-ellipsis{transform:rotate(90deg)}.oo-ui-icon-redo{transform:scaleX(-1)}.oo-ui-indicator-up{transform:rotate(180deg)}.oo-ui-icon-edit{-webkit-mask-image:url(../node_modules/@fandom/design-system/dist/svg/wds-icons-pencil-small.svg);mask-image:url(../node_modules/@fandom/design-system/dist/svg/wds-icons-pencil-small.svg)}.oo-ui-icon-editLock{-webkit-mask-image:url(themes/wikimediaui/images/icons/editLock.svg);mask-image:url(themes/wikimediaui/images/icons/editLock.svg)}.oo-ui-icon-editUndo{-webkit-mask-image:url(themes/wikimediaui/images/icons/editUndo-rtl.svg);mask-image:url(themes/wikimediaui/images/icons/editUndo-rtl.svg)}.oo-ui-icon-link{-webkit-mask-image:url(../node_modules/@fandom/design-system/dist/svg/wds-icons-link-small.svg);mask-image:url(../node_modules/@fandom/design-system/dist/svg/wds-icons-link-small.svg)}.oo-ui-icon-unLink{-webkit-mask-image:url(themes/wikimediaui/images/icons/unLink.svg);mask-image:url(themes/wikimediaui/images/icons/unLink.svg)}.oo-ui-icon-linkExternal{-webkit-mask-image:url(../node_modules/@fandom/design-system/dist/svg/wds-icons-external-small.svg);mask-image:url(../node_modules/@fandom/design-system/dist/svg/wds-icons-external-small.svg)}.oo-ui-icon-linkSecure{-webkit-mask-image:url(../node_modules/@fandom/design-system/dist/svg/wds-icons-lock-small.svg);mask-image:url(../node_modules/@fandom/design-system/dist/svg/wds-icons-lock-small.svg)}.oo-ui-icon-redo{-webkit-mask-image:url(../node_modules/@fandom/design-system/dist/svg/wds-icons-reply-small.svg);mask-image:url(../node_modules/@fandom/design-system/dist/svg/wds-icons-reply-small.svg)}.oo-ui-icon-undo{-webkit-mask-image:url(../node_modules/@fandom/design-system/dist/svg/wds-icons-reply-small.svg);mask-image:url(../node_modules/@fandom/design-system/dist/svg/wds-icons-reply-small.svg)}

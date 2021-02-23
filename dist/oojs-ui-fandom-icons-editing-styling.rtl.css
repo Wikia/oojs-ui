@@ -1,0 +1,424 @@
+/*!
+ * OOUI v0.19.0---base-0.35.1
+ * https://www.mediawiki.org/wiki/OOUI
+ *
+ * Copyright 2011–2021 OOUI Team and other contributors.
+ * Released under the MIT license
+ * http://oojs.mit-license.org
+ *
+ * Date: 2021-02-23T17:25:30Z
+ */
+.oo-ui-icon-arrowNext,
+.oo-ui-icon-upTriangle,
+.oo-ui-icon-collapse {
+  transform: rotate(180deg);
+}
+.oo-ui-icon-ellipsis {
+  transform: rotate(90deg);
+}
+.oo-ui-icon-redo {
+  transform: scaleX(-1);
+}
+.oo-ui-indicator-up {
+  transform: rotate(180deg);
+}
+.oo-ui-icon-bigger {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bigger.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bigger.svg');
+}
+.oo-ui-icon-smaller {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/smaller.svg');
+  mask-image: url('themes/wikimediaui/images/icons/smaller.svg');
+}
+.oo-ui-icon-subscript {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/subscript-rtl.svg');
+  mask-image: url('themes/wikimediaui/images/icons/subscript-rtl.svg');
+}
+.oo-ui-icon-superscript {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/superscript-rtl.svg');
+  mask-image: url('themes/wikimediaui/images/icons/superscript-rtl.svg');
+}
+.oo-ui-icon-bold {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-a.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-a.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(ar) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-arab-ain.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-arab-ain.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(be) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-cyrl-te.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-cyrl-te.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(ce) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-cyrl-palochka.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-cyrl-palochka.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(cs) {
+  -webkit-mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-bold-small.svg');
+  mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-bold-small.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(en) {
+  -webkit-mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-bold-small.svg');
+  mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-bold-small.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(he) {
+  -webkit-mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-bold-small.svg');
+  mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-bold-small.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(ml) {
+  -webkit-mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-bold-small.svg');
+  mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-bold-small.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(pl) {
+  -webkit-mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-bold-small.svg');
+  mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-bold-small.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(sco) {
+  -webkit-mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-bold-small.svg');
+  mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-bold-small.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(da) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-f.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-f.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(de) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-f.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-f.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(hu) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-f.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-f.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(ksh) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-f.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-f.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(nn) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-f.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-f.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(no) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-f.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-f.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(sv) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-f.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-f.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(es) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-n.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-n.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(gl) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-n.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-n.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(pt) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-n.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-n.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(eu) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-l.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-l.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(fi) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-l.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-l.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(fa) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-arab-dad.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-arab-dad.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(fr) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-g.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-g.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(it) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-g.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-g.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(hy) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-armn-to.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-armn-to.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(ka) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-geor-man.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-geor-man.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(ky) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-cyrl-zhe.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-cyrl-zhe.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(ru) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-cyrl-zhe.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-cyrl-zhe.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(uk) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-cyrl-zhe.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-cyrl-zhe.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(nl) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-v.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-v.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(os) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-cyrl-be.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-cyrl-be.svg');
+}
+/* @noflip */
+.oo-ui-icon-bold:lang(ur) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/bold-arab-jeem.svg');
+  mask-image: url('themes/wikimediaui/images/icons/bold-arab-jeem.svg');
+}
+.oo-ui-icon-highlight {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/highlight.svg');
+  mask-image: url('themes/wikimediaui/images/icons/highlight.svg');
+}
+.oo-ui-icon-italic {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/italic-a.svg');
+  mask-image: url('themes/wikimediaui/images/icons/italic-a.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(ar) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/italic-arab-meem.svg');
+  mask-image: url('themes/wikimediaui/images/icons/italic-arab-meem.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(cs) {
+  -webkit-mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-italics-small.svg');
+  mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-italics-small.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(en) {
+  -webkit-mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-italics-small.svg');
+  mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-italics-small.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(fr) {
+  -webkit-mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-italics-small.svg');
+  mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-italics-small.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(he) {
+  -webkit-mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-italics-small.svg');
+  mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-italics-small.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(ml) {
+  -webkit-mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-italics-small.svg');
+  mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-italics-small.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(pl) {
+  -webkit-mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-italics-small.svg');
+  mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-italics-small.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(pt) {
+  -webkit-mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-italics-small.svg');
+  mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-italics-small.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(sco) {
+  -webkit-mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-italics-small.svg');
+  mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-italics-small.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(be) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/italic-k.svg');
+  mask-image: url('themes/wikimediaui/images/icons/italic-k.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(ce) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/italic-k.svg');
+  mask-image: url('themes/wikimediaui/images/icons/italic-k.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(da) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/italic-k.svg');
+  mask-image: url('themes/wikimediaui/images/icons/italic-k.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(de) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/italic-k.svg');
+  mask-image: url('themes/wikimediaui/images/icons/italic-k.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(fi) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/italic-k.svg');
+  mask-image: url('themes/wikimediaui/images/icons/italic-k.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(ky) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/italic-k.svg');
+  mask-image: url('themes/wikimediaui/images/icons/italic-k.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(nn) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/italic-k.svg');
+  mask-image: url('themes/wikimediaui/images/icons/italic-k.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(no) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/italic-k.svg');
+  mask-image: url('themes/wikimediaui/images/icons/italic-k.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(os) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/italic-k.svg');
+  mask-image: url('themes/wikimediaui/images/icons/italic-k.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(sv) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/italic-k.svg');
+  mask-image: url('themes/wikimediaui/images/icons/italic-k.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(ru) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/italic-k.svg');
+  mask-image: url('themes/wikimediaui/images/icons/italic-k.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(uk) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/italic-k.svg');
+  mask-image: url('themes/wikimediaui/images/icons/italic-k.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(es) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/italic-c.svg');
+  mask-image: url('themes/wikimediaui/images/icons/italic-c.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(gl) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/italic-c.svg');
+  mask-image: url('themes/wikimediaui/images/icons/italic-c.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(it) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/italic-c.svg');
+  mask-image: url('themes/wikimediaui/images/icons/italic-c.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(nl) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/italic-c.svg');
+  mask-image: url('themes/wikimediaui/images/icons/italic-c.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(eu) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/italic-e.svg');
+  mask-image: url('themes/wikimediaui/images/icons/italic-e.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(fa) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/italic-arab-keheh-jeem.svg');
+  mask-image: url('themes/wikimediaui/images/icons/italic-arab-keheh-jeem.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(hu) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/italic-d.svg');
+  mask-image: url('themes/wikimediaui/images/icons/italic-d.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(hy) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/italic-armn-sha.svg');
+  mask-image: url('themes/wikimediaui/images/icons/italic-armn-sha.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(ksh) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/italic-s.svg');
+  mask-image: url('themes/wikimediaui/images/icons/italic-s.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(ka) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/italic-geor-kan.svg');
+  mask-image: url('themes/wikimediaui/images/icons/italic-geor-kan.svg');
+}
+/* @noflip */
+.oo-ui-icon-italic:lang(ur) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/italic-arab-teh.svg');
+  mask-image: url('themes/wikimediaui/images/icons/italic-arab-teh.svg');
+}
+.oo-ui-icon-strikethrough {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/strikethrough-a.svg');
+  mask-image: url('themes/wikimediaui/images/icons/strikethrough-a.svg');
+}
+/* @noflip */
+.oo-ui-icon-strikethrough:lang(en) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/strikethrough-s.svg');
+  mask-image: url('themes/wikimediaui/images/icons/strikethrough-s.svg');
+}
+/* @noflip */
+.oo-ui-icon-strikethrough:lang(fi) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/strikethrough-y.svg');
+  mask-image: url('themes/wikimediaui/images/icons/strikethrough-y.svg');
+}
+.oo-ui-icon-underline {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/underline-a.svg');
+  mask-image: url('themes/wikimediaui/images/icons/underline-a.svg');
+}
+/* @noflip */
+.oo-ui-icon-underline:lang(en) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/underline-u.svg');
+  mask-image: url('themes/wikimediaui/images/icons/underline-u.svg');
+}
+/* @noflip */
+.oo-ui-icon-underline:lang(de) {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/underline-u.svg');
+  mask-image: url('themes/wikimediaui/images/icons/underline-u.svg');
+}
+.oo-ui-icon-textLanguage {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/language.svg');
+  mask-image: url('themes/wikimediaui/images/icons/language.svg');
+}
+.oo-ui-icon-textDirLTR {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/textDirLTR.svg');
+  mask-image: url('themes/wikimediaui/images/icons/textDirLTR.svg');
+}
+.oo-ui-icon-textDirRTL {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/textDirRTL.svg');
+  mask-image: url('themes/wikimediaui/images/icons/textDirRTL.svg');
+}
+.oo-ui-icon-textStyle {
+  -webkit-mask-image: url('themes/wikimediaui/images/icons/textStyle.svg');
+  mask-image: url('themes/wikimediaui/images/icons/textStyle.svg');
+}
+.oo-ui-icon-textFormat {
+  -webkit-mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-text-small.svg');
+  mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-text-small.svg');
+}
+.oo-ui-icon-paragraph {
+  -webkit-mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-paragraph-small.svg');
+  mask-image: url('../node_modules/@fandom/design-system/dist/svg/wds-icons-paragraph-small.svg');
+}
